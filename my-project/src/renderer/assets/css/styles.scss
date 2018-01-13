@@ -1,22 +1,18 @@
-// 1. Your custom variables and variable overwrites.
-$global-link-color: #DA7D02;
-
+@import "_variables.scss";
 // 2. Import default variables and available mixins.
 @import "../../../../node_modules/uikit/src/scss/variables-theme.scss";
 @import "../../../../node_modules/uikit/src/scss/mixins-theme.scss";
-
 // 3. Your custom mixin overwrites.
-@mixin hook-card() { color: #000; }
-
+@mixin hook-card() {
+  color: #000;
+}
 // 4. Import UIkit.
 @import "../../../../node_modules/uikit/src/scss/uikit-theme.scss";
 
-
-
-html, body {
+body,
+html {
   font-size: 1em;
 }
-
 
 .content {
   $margin-content: 2em;
@@ -25,27 +21,191 @@ html, body {
   margin-right: $margin-content;
 }
 
-
 .task {
   width: 100%;
   height: 100%;
   border: solid black;
 }
 
-.box{
-	position: relative;
-	width: 100%;		/* desired width */
-}
-.box:after{
-	content: "";
-	display: block;
-	padding-top: 100%; 	/* initial ratio of 1:1*/
+.box {
+  position: relative;
+  width: 100%;
+  /* desired width */
 }
 
-.box-content{
-	position:  absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
+.box:after {
+  content: "";
+  display: block;
+  padding-top: 100%;
+  /* initial ratio of 1:1*/
+}
+
+.box-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.vue-progress-path path {
+  stroke-width: 12;
+}
+
+.vue-progress-path .progress {
+  stroke: red;
+}
+
+.vue-progress-path .background {
+  stroke: #edd;
+}
+
+.progress-linear {
+  height: 2rem !important;
+}
+
+.progress-linear__background {
+  background: $subaccent;
+}
+
+.progress-linear__bar__determinate {
+  background: $accent;
+}
+
+.color-accent {
+  background: $accent;
+}
+
+.nav-circle {
+  position: relative !important;
+  height: 50px !important;
+  width: 50px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+.spacer {
+  height: 7rem;
+}
+
+.circle {
+  position: relative;
+  width: 85px;
+  height: 85px;
+  margin: 20px auto;
+
+  svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    &.circleFill {
+      z-index: 1;
+      stroke-dasharray: 322;
+      stroke-dashoffset: 322;
+      transition: all 3s;
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+
+#svg circle {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear;
+  stroke: #666;
+  stroke-width: 1em;
+}
+#svg #bar {
+  stroke: #FF9F1E;
+}
+#cont {
+  display: block;
+  height: 200px;
+  width: 200px;
+  margin: 2em auto;
+  box-shadow: 0 0 1em black;
+  border-radius: 100%;
+  position: relative;
+}
+#cont:after {
+  position: absolute;
+  display: block;
+  height: 160px;
+  width: 160px;
+  left: 50%;
+  top: 50%;
+  box-shadow: inset 0 0 1em black;
+  content: attr(data-pct)"%";
+  margin-top: -80px;
+  margin-left: -80px;
+  border-radius: 100%;
+  line-height: 160px;
+  font-size: 2em;
+  text-shadow: 0 0 0.5em black;
+}
+
+
+
+.u-absoluteCenter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+.u-flexCenter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.u-offscreen {
+  position: absolute;
+  left: -999em;
+}
+.demo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.demo :first-child {
+  margin-bottom: 20px;
+}
+.progress {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+.progress__meter,
+.progress__value {
+  fill: none;
+}
+.progress__meter {
+  stroke: #e6e6e6;
+}
+.progress__value {
+  stroke: #f77a52;
+  stroke-linecap: round;
 }
