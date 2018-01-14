@@ -21707,14 +21707,14 @@ html {
   stroke-linecap: round;
 }
 
-.slither-enter-active, .slither-leave-active {
+.slider-enter-active, .slider-leave-active {
   transition: transform 3s;
 }
 
-.slither-enter, .slither-leave-to {
+.slider-enter, .slider-leave-to {
   transform: translateX(-100%);
 }
 
-.slither-enter-to, .slither-leave {
+.slider-enter-to, .slider-leave {
   transform: translateX(0);
 }

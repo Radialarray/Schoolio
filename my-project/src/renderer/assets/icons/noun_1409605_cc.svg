@@ -1,1 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 125" version="1.1" x="0px" y="0px"><title>5.4</title><desc>Created with Sketch.</desc><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill="#000000"><polygon points="48 48 33 48 33 52 48 52 48 67 52 67 52 52 67 52 67 48 52 48 52 33 48 33"/><path d="M50,78 C65.463973,78 78,65.463973 78,50 C78,34.536027 65.463973,22 50,22 C34.536027,22 22,34.536027 22,50 C22,65.463973 34.536027,78 50,78 Z M50,82 C32.326888,82 18,67.673112 18,50 C18,32.326888 32.326888,18 50,18 C67.673112,18 82,32.326888 82,50 C82,67.673112 67.673112,82 50,82 Z" fill-rule="nonzero"/></g></g><text x="0" y="115" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">Created by Landan Lloyd</text><text x="0" y="120" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">from the Noun Project</text></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>noun_1409605_cc</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="noun_1409605_cc" fill-rule="nonzero" fill="#000000">
+            <g id="Group">
+                <g id="Shape">
+                    <polygon points="30 30 15 30 15 34 30 34 30 49 34 49 34 34 49 34 49 30 34 30 34 15 30 15"></polygon>
+                    <path d="M32,60 C47.463973,60 60,47.463973 60,32 C60,16.536027 47.463973,4 32,4 C16.536027,4 4,16.536027 4,32 C4,47.463973 16.536027,60 32,60 Z M32,64 C14.326888,64 0,49.673112 0,32 C0,14.326888 14.326888,0 32,0 C49.673112,0 64,14.326888 64,32 C64,49.673112 49.673112,64 32,64 Z"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

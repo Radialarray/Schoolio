@@ -3,10 +3,10 @@
   <vue-nav></vue-nav>
 
   <div class="content">
+    <transition name="slider">
 
     <router-view></router-view>
-
-<vue-dashboard></vue-dashboard>
+</transition>
 
 </div>
 

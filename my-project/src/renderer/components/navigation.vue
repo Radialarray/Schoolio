@@ -3,10 +3,10 @@
     <div class="uk-navbar-left uk-margin-left">
       <ul class="uk-navbar-nav">
         <li class="uk-active">
-          <router-link to="/dashboard" class="uk-border-circle nav-circle color-accent" href="#">Home</router-link>
+          <router-link to="/" class="uk-border-circle nav-circle color-accent" href="#">Home</router-link>
         </li>
         <li>
-          <router-link to="/" class="uk-border-circle nav-circle color-accent">Parent</router-link>
+          <router-link to="/landing-page" class="uk-border-circle nav-circle color-accent">Parent</router-link>
           <div class="uk-navbar-dropdown">
             <ul class="uk-nav uk-navbar-dropdown-nav">
               <li class="uk-active"><a href="#">Home</a></li>
@@ -15,7 +15,7 @@
             </ul>
           </div>
         </li>
-        <li><router-link to="/screen2" class="uk-border-circle nav-circle color-accent" href="#">Item</router-link></li>
+        <li><router-link to="/dashboard" class="uk-border-circle nav-circle color-accent" href="#">Item</router-link></li>
       </ul>
     </div>
 

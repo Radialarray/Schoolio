@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <transition name="slither">
     <router-view></router-view>
-  </transition>
   </div>
 </template>
 

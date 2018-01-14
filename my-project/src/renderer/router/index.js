@@ -13,7 +13,10 @@ export default new Router({
     {
       path: '/landing-page',
       name: 'landing-page',
-      component: require('@/components/LandingPage').default
+      component: require('@/components/home').default,
+      children: [
+        { path: '', component: require('@/components/LandingPage').default }
+      ]
     },
     {
       path: '/circle',
@@ -33,6 +36,15 @@ export default new Router({
     {
       path: '*',
       redirect: '/'
+    },
+    {
+      path: '/dashboard',
+      component: require('@/components/home').default,
+      children: [
+        // UserHome will be rendered inside User's <router-view>
+        // when /user/:id is matched
+        { path: '', component: require('@/components/dashboard').default }
+      ]
     }
   ]
 })
