@@ -55,6 +55,7 @@
   "dependencies": {
     "axios": "^0.16.1",
     "install": "^0.10.2",
+    "lodash": "^4.17.4",
     "node-sass": "^4.7.2",
     "uikit": "^3.0.0-beta.36",
     "vue": "^2.3.3",
@@ -63,6 +64,7 @@
     "vue-progressbar": "^0.7.3",
     "vue-router": "^2.5.3",
     "vue2-circle-progress": "^1.2.1",
+    "vuedraggable": "^2.16.0",
     "vuetify": "^0.17.6",
     "vuex": "^2.3.1"
   },

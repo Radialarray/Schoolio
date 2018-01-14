@@ -15,7 +15,7 @@ export default {
       type: Number
     }
   },
-  data() {
+  data () {
     return {
       radius: 12
     }
@@ -29,5 +29,4 @@ export default {
     }
   }
 }
-
 </script>
