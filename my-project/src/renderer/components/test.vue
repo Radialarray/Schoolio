@@ -58,56 +58,8 @@
       </div>
       <div class="uk-width-1-2@m">
         <div class="uk-grid-collapse uk-child-width-1-5@s uk-flex-left uk-text-center" uk-grid>
-          <div>
-            <div class="uk-card uk-card-default uk-card-body">
-            <p>Marc Bel</p>
-          </div>
-        </div>
-        <div>
-          <div class="uk-card uk-card-secondary uk-card-body">Item 2</div>
-        </div>
-        <div>
-          <div class="uk-card uk-card-default uk-card-body">Item 3</div>
-        </div>
-        <div>
-          <div class="uk-card uk-card-default uk-card-body">Item 4</div>
-        </div>
-        <div>
-          <div class="uk-card uk-card-primary uk-card-body">Item 5</div>
-        </div>
-        <div>
-          <div class="uk-card uk-card-default uk-card-body">Item 6</div>
-        </div>
-        <div>
-          <div class="uk-card uk-card-default uk-card-body">Item 7</div>
-        </div>
-        <div>
-          <div class="uk-card uk-card-default uk-card-body">Item 8</div>
-        </div>
-        <div>
-          <div class="uk-card uk-card-default uk-card-body">Item 9</div>
-        </div>
-        <div>
-          <div class="uk-card uk-card-default uk-card-body">Item 3</div>
-        </div>
-        <div>
-          <div class="uk-card uk-card-default uk-card-body">Item 4</div>
-        </div>
-        <div>
-          <div class="uk-card uk-card-primary uk-card-body">Item 5</div>
-        </div>
-        <div>
-          <div class="uk-card uk-card-default uk-card-body">Item 6</div>
-        </div>
-        <div>
-          <div class="uk-card uk-card-default uk-card-body">Item 7</div>
-        </div>
-        <div>
-          <div class="uk-card uk-card-default uk-card-body">Item 8</div>
-        </div>
-        <div>
-          <div class="uk-card uk-card-default uk-card-body">Item 9</div>
-        </div>
+
+        <vue-drag></vue-drag>
       </div>
     </div>
     <div class="uk-width-expand@m uk-height-1-1">
@@ -157,7 +109,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'landing-page',
   data () {

@@ -3,8 +3,8 @@ import axios from 'axios'
 import VueProgress from 'vue-progress-path'
 import Vuetify from 'vuetify'
 import VueCircle from 'vue2-circle-progress'
+import VueDrag from './components/circleTest.vue'
 import SvgCircle from './components/circle.vue'
-import circleTest from './components/circleTest.vue'
 import vueTest from './components/test.vue'
 
 import './assets/css/styles.min.css'
@@ -23,6 +23,7 @@ Vue.use(VueProgress)
 Vue.use(Vuetify)
 
 Vue.component('VueCircle', VueCircle)
+Vue.component('VueDrag', VueDrag)
 
 new Vue({
   template: '<App/>',

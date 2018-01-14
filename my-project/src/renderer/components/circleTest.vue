@@ -1,15 +1,14 @@
 <template>
 
-<div class="uk-width-1-2@m">
-  <button class="uk-button uk-button-default" type="button">Hover</button>
-<div uk-dropdown>
-    <ul class="uk-nav uk-dropdown-nav">
-        <li @click="sortdesc()"><a>Desc</a></li>
-        <li @click="sortasc()"><a>Asc</a></li>
+    <!-- <button class="uk-button uk-button-default" type="button">Sort</button>
+  <div uk-dropdown>
+      <ul class="uk-nav uk-dropdown-nav">
+          <li @click="sortdesc()"><a>Desc</a></li>
+          <li @click="sortasc()"><a>Asc</a></li>
 
-    </ul>
-</div>
-  <div class="uk-grid-collapse uk-child-width-1-5@s uk-flex-left uk-text-center" uk-grid>
+      </ul>
+  </div> -->
+
 
 
 
@@ -26,8 +25,7 @@
       </div>
     </draggable>
 
-  </div>
-</div>
+
 </template>
 
 <script>
@@ -36,7 +34,7 @@ import draggable from 'vuedraggable'
 import vueFilter from 'vue-filter'
 
 export default {
-  name: 'circleTest',
+  name: 'vue-drag',
   components: {
     draggable
   },
