@@ -1,18 +1,10 @@
 <template>
-
-    <!-- <button class="uk-button uk-button-default" type="button">Sort</button>
-  <div uk-dropdown>
-      <ul class="uk-nav uk-dropdown-nav">
-          <li @click="sortdesc()"><a>Desc</a></li>
-          <li @click="sortasc()"><a>Asc</a></li>
-
-      </ul>
-  </div> -->
+<div>
 
 
 
 
-    <draggable v-model="items" :options="{group:'people'}" @start="drag=true" @end="drag=false">
+    <draggable v-model="items" :options="{group:'people'}" @start="drag=true" @end="drag=false" class="uk-grid-collapse uk-child-width-1-4@s uk-flex-left uk-text-center" uk-grid>
       <!-- <div v-for="item in items" :key="item.message">{{item.message}}</div> -->
 
       <div v-for="(item, index) in items" class="uk-card uk-card-default uk-card-body border">
@@ -24,8 +16,15 @@
         {{ item.message }}
       </div>
     </draggable>
+    <button class="uk-button uk-button-default" type="button">Sort</button>
+  <div uk-dropdown>
+      <ul class="uk-nav uk-dropdown-nav">
+          <li @click="sortdesc()"><a>Desc</a></li>
+          <li @click="sortasc()"><a>Asc</a></li>
 
-
+      </ul>
+  </div>
+  </div>
 </template>
 
 <script>
@@ -38,46 +37,44 @@ export default {
   components: {
     draggable
   },
-  data() {
+  data () {
     return {
       interval: {},
       imageLink: require('../assets/img/fabian-moller-401639.jpg'),
       parentMessage: 'Parent',
       items: [{
-          img: require('../assets/img/fabian-moller-401639.jpg'),
-          message: 'Marc',
-          val: 100
-        },
-        {
-          img: require('../assets/img/fabian-moller-401639.jpg'),
-          message: 'Jana',
-          val: 50
-        },
-        {
-          img: require('../assets/img/fabian-moller-401639.jpg'),
-          message: 'Dennis',
-          val: 30
-        },
-        {
-          img: require('../assets/img/fabian-moller-401639.jpg'),
-          message: 'Peter',
-          val: 10
-        }
+        img: require('../assets/img/fabian-moller-401639.jpg'),
+        message: 'Marc',
+        val: 100
+      },
+      {
+        img: require('../assets/img/fabian-moller-401639.jpg'),
+        message: 'Jana',
+        val: 50
+      },
+      {
+        img: require('../assets/img/fabian-moller-401639.jpg'),
+        message: 'Dennis',
+        val: 30
+      },
+      {
+        img: require('../assets/img/fabian-moller-401639.jpg'),
+        message: 'Peter',
+        val: 10
+      }
       ]
     }
   },
   methods: {
     sortasc: function () {
-      this.items = _.orderBy(this.items, ['val'], ['asc']);
+      this.items = _.orderBy(this.items, ['val'], ['asc'])
     },
     sortdesc: function () {
-      this.items = _.orderBy(this.items, ['val'], ['desc']);
+      this.items = _.orderBy(this.items, ['val'], ['desc'])
     }
   },
-  mounted: function() {
-    console.log(this.items)
-    this.items = _.orderBy(this.items, ['val'], ['desc']);
-    console.log(this.items)
+  mounted: function () {
+    this.items = _.orderBy(this.items, ['val'], ['desc'])
   }
 }
 </script>
@@ -95,6 +92,6 @@ export default {
 }
 
 .border {
-  border: solid black 1px;
+  /* border: solid black 1px; */
 }
 </style>

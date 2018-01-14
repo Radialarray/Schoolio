@@ -21706,3 +21706,15 @@ html {
   stroke: #f77a52;
   stroke-linecap: round;
 }
+
+.slither-enter-active, .slither-leave-active {
+  transition: transform 3s;
+}
+
+.slither-enter, .slither-leave-to {
+  transform: translateX(-100%);
+}
+
+.slither-enter-to, .slither-leave {
+  transform: translateX(0);
+}

@@ -3,9 +3,10 @@ import axios from 'axios'
 import VueProgress from 'vue-progress-path'
 import Vuetify from 'vuetify'
 import VueCircle from 'vue2-circle-progress'
-import VueDrag from './components/circleTest.vue'
-import SvgCircle from './components/circle.vue'
-import vueTest from './components/test.vue'
+import VueDrag from './components/pupils_sortable.vue'
+import VueNav from './components/navigation.vue'
+import VueHome from './components/home.vue'
+import VueDashboard from './components/dashboard.vue'
 
 import './assets/css/styles.min.css'
 import 'uikit'
@@ -24,6 +25,9 @@ Vue.use(Vuetify)
 
 Vue.component('VueCircle', VueCircle)
 Vue.component('VueDrag', VueDrag)
+Vue.component('VueNav', VueNav)
+Vue.component('VueHome', VueHome)
+Vue.component('VueDashboard', VueDashboard)
 
 new Vue({
   template: '<App/>',

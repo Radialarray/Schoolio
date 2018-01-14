@@ -54,6 +54,7 @@
   },
   "dependencies": {
     "axios": "^0.16.1",
+    "barba.js": "^1.0.0",
     "install": "^0.10.2",
     "lodash": "^4.17.4",
     "node-sass": "^4.7.2",

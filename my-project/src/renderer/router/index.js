@@ -7,8 +7,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'test',
-      component: require('@/components/test').default
+      name: 'dashboard',
+      component: require('@/components/dashboard').default
     },
     {
       path: '/landing-page',
@@ -18,7 +18,17 @@ export default new Router({
     {
       path: '/circle',
       name: 'circleTest',
-      component: require('@/components/circleTest').default
+      component: require('@/components/pupils_sortable').default
+    },
+    {
+      path: '/nav',
+      name: 'nav',
+      component: require('@/components/navigation').default
+    },
+    {
+      path: '/screen2',
+      name: 'screen2',
+      component: require('@/components/screen2').default
     },
     {
       path: '*',
