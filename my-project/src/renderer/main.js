@@ -3,6 +3,9 @@ import axios from 'axios'
 import VueProgress from 'vue-progress-path'
 import Vuetify from 'vuetify'
 import VueCircle from 'vue2-circle-progress'
+import SvgCircle from './components/circle.vue'
+import circleTest from './components/circleTest.vue'
+import vueTest from './components/test.vue'
 
 import './assets/css/styles.min.css'
 import 'uikit'
@@ -22,9 +25,13 @@ Vue.use(Vuetify)
 Vue.component('VueCircle', VueCircle)
 
 new Vue({
+  template: '<App/>',
   components: { App },
   router,
   store,
-  VueCircle,
-  template: '<App/>'
+  data () {
+    return {
+      gaugeValue: 0
+    }
+  }
 }).$mount('#app')

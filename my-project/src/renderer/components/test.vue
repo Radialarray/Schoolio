@@ -4,10 +4,10 @@
     <div class="uk-navbar-left uk-margin-left">
       <ul class="uk-navbar-nav">
         <li class="uk-active">
-          <a class="uk-border-circle nav-circle color-accent" href="#">Home</a>
+          <router-link to="/" class="uk-border-circle nav-circle color-accent" href="#">Home</router-link>
         </li>
         <li>
-          <a class="uk-border-circle nav-circle color-accent" href="#">Parent</a>
+          <router-link to="/circle" class="uk-border-circle nav-circle color-accent">Parent</router-link>
           <div class="uk-navbar-dropdown">
             <ul class="uk-nav uk-navbar-dropdown-nav">
               <li class="uk-active"><a href="#">Home</a></li>
@@ -27,7 +27,7 @@
     <div class="spacer"></div>
 
     <div class="uk-navbar-right uk-margin-right">
-      <router-link to="/">
+      <router-link to="/circle">
         <img class="uk-border-circle" style="height: 50px;" src="../assets/img/fabian-moller-401639.jpg" />
       </router-link>
     </div>
@@ -60,21 +60,6 @@
         <div class="uk-grid-collapse uk-child-width-1-5@s uk-flex-left uk-text-center" uk-grid>
           <div>
             <div class="uk-card uk-card-default uk-card-body">
-
-
-              <img class="uk-border-circle" style="height: 50px;" src="../assets/img/fabian-moller-401639.jpg" />
-              <!-- <vue-circle :progress="50" :size="100" :reverse="false" line-cap="round" :fill="fill" empty-fill="rgba(0, 0, 0, .1)" :animation-start-value="0.0" :start-angle="0" insert-mode="append" :thickness="10" :show-percent="true" @vue-circle-progress="progress"
-                @vue-circle-end="progress_end">
-                <p>Slot!</p>
-              </vue-circle> -->
-
-              <svg class="progress" width="120" height="120" viewBox="0 0 120 120">
-  		<circle class="progress__meter" cx="60" cy="60" r="54" stroke-width="12" />
-  		<circle class="progress__value" cx="60" cy="60" r="54" stroke-width="12" />
-  	</svg>
-              <input id="control" type="range" value="60" />
-            </div>
-
             <p>Marc Bel</p>
           </div>
         </div>
@@ -172,28 +157,6 @@
 </template>
 
 <script>
-
-var control = document.getElementById('control');
-var progressValue = document.querySelector('.progress__value');
-
-var RADIUS = 54;
-var CIRCUMFERENCE = 2 * Math.PI * RADIUS;
-
-function progress(value) {
-	var progress = value / 100;
-	var dashoffset = CIRCUMFERENCE * (1 - progress);
-
-	console.log('progress:', value + '%', '|', 'offset:', dashoffset)
-
-	progressValue.style.strokeDashoffset = dashoffset;
-}
-
-control.addEventListener('input', function(event) {
-	progress(event.target.valueAsNumber);
-});
-
-progressValue.style.strokeDasharray = CIRCUMFERENCE;
-progress(60);
 
 
 export default {

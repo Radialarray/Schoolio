@@ -16,6 +16,11 @@ export default new Router({
       component: require('@/components/LandingPage').default
     },
     {
+      path: '/circle',
+      name: 'circleTest',
+      component: require('@/components/circleTest').default
+    },
+    {
       path: '*',
       redirect: '/'
     }
