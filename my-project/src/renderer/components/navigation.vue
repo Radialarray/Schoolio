@@ -3,7 +3,7 @@
     <div class="uk-navbar-left uk-margin-left">
       <ul class="uk-navbar-nav">
         <li class="uk-active">
-          <router-link to="/" class="uk-border-circle nav-circle color-accent" href="#">Home</router-link>
+          <router-link to="/dashboard" class="uk-border-circle nav-circle color-accent" href="#">Home</router-link>
         </li>
         <li>
           <router-link to="/" class="uk-border-circle nav-circle color-accent">Parent</router-link>

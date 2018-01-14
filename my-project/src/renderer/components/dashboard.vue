@@ -1,8 +1,6 @@
 <template>
 <div>
-  <vue-nav></vue-nav>
 
-  <div class="content">
     <div class="uk-grid-small uk-child-width-expand@s uk-text-center" uk-grid>
       <div class="uk-width-auto@m">
         <div class="uk-card uk-card-default uk-card-body">Auto</div>
@@ -69,7 +67,6 @@
       <a class="uk-card uk-card-default uk-card-body uk-position-fixed uk-position-small uk-position-bottom-right" href="" >?</a>
     </div>
 
-  </div>
 </div>
 
 
@@ -81,7 +78,7 @@
 
 <script>
 export default {
-  name: 'dashboard',
+  name: 'vue-dashboard',
   data () {
     return {
       fill: {

@@ -4,7 +4,9 @@
 
   <div class="content">
 
+    <router-view></router-view>
 
+<vue-dashboard></vue-dashboard>
 
 </div>
 
