@@ -7371,6 +7371,10 @@ uikit@^3.0.0-beta.36:
   version "3.0.0-beta.36"
   resolved "https://registry.yarnpkg.com/uikit/-/uikit-3.0.0-beta.36.tgz#27dda3b009b2d199540b699ca5e0a3e92473eff7"
 
+underscore@^1.8.3:
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.8.3.tgz#4f3fb53b106e6097fcf9cb4109f2a5e9bdfa5022"
+
 union-value@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/union-value/-/union-value-1.0.0.tgz#5c71c34cb5bad5dcebe3ea0cd08207ba5aa1aea4"
@@ -7563,6 +7567,12 @@ vm-browserify@0.0.4:
 vue-electron@^1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/vue-electron/-/vue-electron-1.0.6.tgz#e798e03180b8933539defe31f92e53b9242b9406"
+
+vue-filter@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/vue-filter/-/vue-filter-0.2.3.tgz#76874a2446762db95f41afa1c4094d37b347d193"
+  dependencies:
+    underscore "^1.8.3"
 
 vue-hot-reload-api@^2.2.0:
   version "2.2.4"
