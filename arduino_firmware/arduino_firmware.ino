@@ -44,6 +44,7 @@ int lastValues[4];
 int counter = 0;
 int isPresent = 0;
 int tagOnReader = 0;
+
 /**
  * Initialize.
  */
@@ -68,14 +69,14 @@ void setup() {
  */
 void loop() {
 
-  for (uint8_t reader = 0; reader < NR_OF_READERS; reader++) {
+//  for (uint8_t reader = 0; reader < NR_OF_READERS; reader++) {
     // Look for new cards
-    Serial.println(mfrc522[reader].PICC_IsNewCardPresent());
-//    isPresent = mfrc522[reader].PICC_IsNewCardPresent();
+//    Serial.println(mfrc522[0].PICC_IsNewCardPresent());
+    isPresent = mfrc522[0].PICC_IsNewCardPresent();
 //    Serial.print("isPresent: ");
 //    Serial.println(isPresent);
 //
-//    tagOnReader = mfrc522[reader].PICC_ReadCardSerial();
+    tagOnReader = mfrc522[0].PICC_ReadCardSerial();
 //    Serial.print("tagOnReader: ");
 //    Serial.println(tagOnReader);
 //lastValues[counter] = tagOnReader;
@@ -98,22 +99,22 @@ void loop() {
 //      Serial.print(F("Reader "));
 //      Serial.print(reader);
       // Show some details of the PICC (that is: the tag/card)
-//      Serial.print(F(": Card UID:"));
-      dump_byte_array(mfrc522[reader].uid.uidByte, mfrc522[reader].uid.size);
-//      Serial.println();
+      Serial.print(F("Card UID:"));
+      dump_byte_array(mfrc522[0].uid.uidByte, mfrc522[0].uid.size);
 //      Serial.print(F("PICC type: "));
 //      MFRC522::PICC_Type piccType = mfrc522[reader].PICC_GetType(mfrc522[reader].uid.sak);
 //      Serial.println(mfrc522[reader].PICC_GetTypeName(piccType));
 
       // Halt PICC
-      mfrc522[reader].PICC_HaltA();
+//      mfrc522[reader].PICC_HaltA();
       // Stop encryption on PCD
-      mfrc522[reader].PCD_StopCrypto1();
+//      mfrc522[reader].PCD_StopCrypto1();
     } //if (mfrc522[reader].PICC_IsNewC
+
   } //for(uint8_t reader
 
 
-}
+//}
 
 /**
  * Helper routine to dump a byte array as hex values to Serial.
@@ -124,4 +125,6 @@ void dump_byte_array(byte *buffer, byte bufferSize) {
 //    Serial.print(buffer[i], HEX);
     Serial.print(buffer[i]);
   }
+        Serial.println();
+  delay(5000);
 }

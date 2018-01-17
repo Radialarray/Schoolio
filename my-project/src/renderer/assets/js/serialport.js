@@ -3,6 +3,7 @@
 // All of the Node.js APIs are available in this process.
 
 const Serialport = require('serialport')
+
 let port
 
 Serialport.list((err, ports) => {
@@ -39,4 +40,21 @@ function openPort (portObj) {
       console.log(data.toString())
     })
   })
+}
+
+// Declare variables
+let obj
+const fs = require('fs')
+const path = require('path')
+
+var jsonPath = path.join(__dirname, 'userdata.json')
+// Read the file and send to the callback
+fs.readFile(jsonPath, handleFile)
+
+// Write the callback function
+function handleFile (err, data) {
+  if (err) throw err
+  obj = JSON.parse(data)
+  console.log(obj)
+  // You can now play with your datas
 }
