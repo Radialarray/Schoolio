@@ -3,6 +3,7 @@
 // All of the Node.js APIs are available in this process.
 
 const Serialport = require('serialport')
+const fs = require('fs')
 
 let port
 
@@ -44,17 +45,24 @@ function openPort (portObj) {
 
 // Declare variables
 let obj
-const fs = require('fs')
-const path = require('path')
-
-var jsonPath = path.join(__dirname, 'userdata.json')
+let filePath = './data/userdata.json'
 // Read the file and send to the callback
-fs.readFile(jsonPath, handleFile)
+fs.readFile(filePath, readFromJson)
 
 // Write the callback function
-function handleFile (err, data) {
+function readFromJson (err, data) {
   if (err) throw err
   obj = JSON.parse(data)
   console.log(obj)
-  // You can now play with your datas
+  writeToJson(obj)
+}
+
+function writeToJson (content) {
+  let stringied = JSON.stringify(content)
+  fs.writeFile('./data/userdata.json', stringied, 'utf8', function (err) {
+    if (err) {
+      return console.log(err)
+    }
+    console.log('The file was saved!')
+  })
 }

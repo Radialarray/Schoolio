@@ -7,43 +7,48 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: require('@/components/home').default
-    },
-    {
-      path: '/landing-page',
-      name: 'landing-page',
       component: require('@/components/home').default,
       children: [
-        { path: '', component: require('@/components/LandingPage').default }
+        {
+          path: '',
+          name: 'home',
+          component: require('@/components/welcome').default
+        }
       ]
-    },
-    {
+    }, {
+      path: '/landing-page',
+      component: require('@/components/home').default,
+      children: [
+        {
+          path: '',
+          name: 'landing-page',
+          component: require('@/components/LandingPage').default
+        }
+      ]
+    }, {
       path: '/circle',
       name: 'circleTest',
       component: require('@/components/pupils_sortable').default
-    },
-    {
+    }, {
       path: '/nav',
       name: 'nav',
       component: require('@/components/navigation').default
-    },
-    {
+    }, {
       path: '/screen2',
       name: 'screen2',
       component: require('@/components/screen2').default
-    },
-    {
+    }, {
       path: '*',
       redirect: '/'
-    },
-    {
+    }, {
       path: '/dashboard',
       component: require('@/components/home').default,
-      children: [
-        // UserHome will be rendered inside User's <router-view>
+      children: [// UserHome will be rendered inside User's <router-view>
         // when /user/:id is matched
-        { path: '', component: require('@/components/dashboard').default }
+        {
+          path: '',
+          component: require('@/components/dashboard').default
+        }
       ]
     }
   ]
