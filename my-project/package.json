@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "author": "sarah wach & sven loechner",
   "description": "classroom management software for teachers and students",
-  "license": null,
+  "license": "UNLICENSED",
   "main": "./dist/electron/main.js",
   "scripts": {
     "build": "node .electron-vue/build.js && electron-builder",
