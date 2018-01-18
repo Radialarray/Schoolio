@@ -3,8 +3,11 @@
   <vue-nav></vue-nav>
 
   <div class="content">
-    <transition name="fade">
-    <router-view ></router-view>
+    <transition
+      name="custom-classes-transition"
+      enter-active-class="slideInRight"
+      leave-active-class="slideOutLeft"
+    >    <router-view ></router-view>
 </transition>
 
 </div>

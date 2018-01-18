@@ -1,12 +1,15 @@
 <template>
-
 <div class="uk-animation-fade uk-child-width-expand@s uk-width-1-1" uk-grid>
 
 
   <form @submit.prevent="onSubmit" class="uk-position-center uk-width-1-2 ">
     <fieldset class="uk-fieldset uk-height-1-1 uk-width-1-1">
       <div class="uk-flex uk-flex-stretch uk-width-1-1 uk-height-medium">
-        <transition name="fadeLeft">
+        <transition
+          name="custom-classes-transition"
+          enter-active-class="fadeInRight"
+          leave-active-class="fadeOutLeft"
+        >
         <div v-if="onboardingPage === 1" class="uk-width-1-1">
           <legend class="uk-legend">Welcome</legend>
           <div class="uk-margin">
@@ -29,14 +32,21 @@
         </div>
       </transition>
 
-      <transition name="fadeLeft">
-        <div v-if="onboardingPage === 2" class="uk-width-1-1">
+      <transition
+        name="custom-classes-transition"
+        enter-active-class="fadeInRight"
+        leave-active-class="fadeOutLeft"
+      >        <div v-if="onboardingPage === 2" class="uk-width-1-1">
           <legend class="uk-legend">Legen Sie den Tag auf den Reader</legend>
   </div>
   </transition>
 
-  <transition name="fadeLeft">
-  <div v-if="onboardingPage === 3" class="uk-width-1-1">
+  <transition
+    name="custom-classes-transition"
+    enter-active-class="fadeInRight"
+    leave-active-class="fadeOutLeft"
+  >
+    <div v-if="onboardingPage === 3" class="uk-width-1-1">
     <legend class="uk-legend">Yuhuuuuu</legend>
   </div>
   </transition>
