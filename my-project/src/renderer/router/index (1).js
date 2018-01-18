@@ -25,30 +25,7 @@ export default new Router({
           component: require('@/components/LandingPage').default
         }
       ]
-    },
-    {
-      path: '/pupils',
-      component: require('@/components/home').default,
-      children: [
-        {
-          path: '',
-          name: 'landing-page',
-          component: require('@/components/pupils_sortable').default
-        }
-      ]
-    },
-    {
-      path: '/create-task',
-      component: require('@/components/home').default,
-      children: [
-        {
-          path: '',
-          name: 'landing-page',
-          component: require('@/components/createTask').default
-        }
-      ]
-    },
-    {
+    }, {
       path: '/circle',
       name: 'circleTest',
       component: require('@/components/pupils_sortable').default

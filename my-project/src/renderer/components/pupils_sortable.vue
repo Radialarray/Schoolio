@@ -1,29 +1,38 @@
 <template>
 <div>
-
-
-
-
-    <draggable v-model="items" :options="{group:'people'}" @start="drag=true" @end="drag=false" class="uk-grid-collapse uk-child-width-1-4@s uk-flex-left uk-text-center" uk-grid>
-      <!-- <div v-for="item in items" :key="item.message">{{item.message}}</div> -->
-
-      <div v-for="(item, index) in items" class="uk-card uk-card-default uk-card-body border">
+        <draggable v-model="items" :options="{group:'people'}" @start="drag=true" @end="drag=false" class="uk-flex uk-margin-bottom">
+      <div v-for="(item, index) in items" v-if="item.val >= 80" class="uk-card uk-card-default uk-card-body border uk-margin-right">
         <div class="centerAll" :title="item.message +' ist bei ' + item.val + '%'" uk-tooltip>
-          <v-progress-circular class="centerAll" v-bind:size="80" v-bind:width="10" v-bind:rotate="360" v-bind:value="item.val" color="teal">
+          <v-progress-circular class="centerAll" v-bind:size="80" v-bind:width="10" v-bind:rotate="360" v-bind:value="item.val" v-bind:color="color0">
             <img class="img-rounded" :src="imageLink" />
           </v-progress-circular>
         </div>
         {{ item.message }}
       </div>
     </draggable>
-    <button class="uk-button uk-button-default" type="button">Sort</button>
-  <div uk-dropdown>
-      <ul class="uk-nav uk-dropdown-nav">
-          <li @click="sortdesc()"><a>Desc</a></li>
-          <li @click="sortasc()"><a>Asc</a></li>
 
-      </ul>
-  </div>
+
+    <draggable v-model="items" :options="{group:'people'}" @start="drag=true" @end="drag=false" class="uk-flex uk-margin-bottom">
+      <div v-for="(item, index) in items" v-if="item.val >20 && item.val < 80" class="uk-card uk-card-default uk-card-body border uk-margin-right">
+        <div class="centerAll" :title="item.message +' ist bei ' + item.val + '%'" uk-tooltip>
+          <v-progress-circular class="centerAll" v-bind:size="80" v-bind:width="10" v-bind:rotate="360" v-bind:value="item.val" v-bind:color="color50">
+            <img class="img-rounded" :src="imageLink" />
+          </v-progress-circular>
+        </div>
+        {{ item.message }}
+      </div>
+    </draggable>
+
+    <draggable v-model="items" :options="{group:'people'}" @start="drag=true" @end="drag=false" class="uk-flex uk-margin-bottom">
+      <div v-for="(item, index) in items" v-if="item.val <= 20" class="uk-card uk-card-default uk-card-body border uk-margin-right">
+        <div class="centerAll" :title="item.message +' ist bei ' + item.val + '%'" uk-tooltip>
+          <v-progress-circular class="centerAll" v-bind:size="80" v-bind:width="10" v-bind:rotate="360" v-bind:value="item.val" v-bind:color="color100">
+            <img class="img-rounded" :src="imageLink" />
+          </v-progress-circular>
+        </div>
+        {{ item.message }}
+      </div>
+    </draggable>
   </div>
 </template>
 
@@ -40,6 +49,9 @@ export default {
   data () {
     return {
       interval: {},
+      color100: 'red',
+      color50: 'green',
+      color0: 'yellow',
       imageLink: require('../assets/img/fabian-moller-401639.jpg'),
       parentMessage: 'Parent',
       items: [{
@@ -60,19 +72,39 @@ export default {
       {
         img: require('../assets/img/fabian-moller-401639.jpg'),
         message: 'Peter',
-        val: 10
+        val: parseInt(Math.random() * 100)
+      },
+      {
+        img: require('../assets/img/fabian-moller-401639.jpg'),
+        message: 'Peter',
+        val: parseInt(Math.random() * 100)
+      },
+      {
+        img: require('../assets/img/fabian-moller-401639.jpg'),
+        message: 'Peter',
+        val: parseInt(Math.random() * 100)
+      },
+      {
+        img: require('../assets/img/fabian-moller-401639.jpg'),
+        message: 'Peter',
+        val: parseInt(Math.random() * 100)
+      },
+      {
+        img: require('../assets/img/fabian-moller-401639.jpg'),
+        message: 'Peter',
+        val: parseInt(Math.random() * 100)
       }
       ]
     }
   },
-  methods: {
-    sortasc: function () {
-      this.items = _.orderBy(this.items, ['val'], ['asc'])
-    },
-    sortdesc: function () {
-      this.items = _.orderBy(this.items, ['val'], ['desc'])
-    }
-  },
+  // methods: {
+  //   sortasc: function () {
+  //     this.items = _.orderBy(this.items, ['val'], ['asc'])
+  //   },
+  //   sortdesc: function () {
+  //     this.items = _.orderBy(this.items, ['val'], ['desc'])
+  //   }
+  // },
   mounted: function () {
     this.items = _.orderBy(this.items, ['val'], ['desc'])
   }

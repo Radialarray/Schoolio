@@ -23,21 +23,19 @@
         <div class="uk-card uk-card-default uk-card-body">Auto</div>
       </div>
 
-      <div class="uk-width-1-2@m uk-overflow-auto">
+      <div class="uk-width-1-2@m">
         <vue-drag></vue-drag>
     </div>
 
     <div class="uk-width-expand@m uk-height-1-1">
       <div class="uk-child-width-1-2@s uk-flex-left uk-text-center" uk-grid>
         <div>
-          <router-link to="create-task">
           <div class="uk-card uk-card-default uk-card-body box">
             <div class="box-content">
-              <p>Aufgabe erstellen</p>
+              <p>Aufgaben erstellen</p>
               <img class="uk-width-1-2" src="../assets/icons/noun_1409605_cc.svg">
             </div>
           </div>
-          </router-link>
         </div>
         <div>
           <div class="uk-card uk-card-default uk-card-body box">
@@ -86,7 +84,7 @@ export default {
       fill: {
         gradient: ['red', 'green', 'blue']
       },
-      valueDeterminate: parseInt(Math.random() * (100 / 60) * 100)
+      valueDeterminate: 20
     }
   },
   components: {},

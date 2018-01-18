@@ -6,7 +6,7 @@
           <router-link to="/" class="uk-border-circle nav-circle color-accent" href="#">Home</router-link>
         </li>
         <li>
-          <router-link to="/pupils" class="uk-border-circle nav-circle color-accent">Parent</router-link>
+          <router-link to="/landing-page" class="uk-border-circle nav-circle color-accent">Parent</router-link>
           <div class="uk-navbar-dropdown">
             <ul class="uk-nav uk-navbar-dropdown-nav">
               <li class="uk-active"><a href="#">Home</a></li>

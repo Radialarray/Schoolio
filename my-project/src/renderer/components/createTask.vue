@@ -1,10 +1,12 @@
 <template>
-<div class="uk-animation-fade uk-child-width-expand@s uk-width-1-1" uk-grid>
+<div>
 
+  <div class="uk-grid-small uk-child-width-expand@s uk-text-center" uk-grid>
+    <div class="uk-width-expand@m">
       <form @submit.prevent="onSubmit">
         <fieldset class="uk-fieldset">
 
-          <legend class="uk-legend">Welcome</legend>
+          <legend class="uk-legend">Aufgabe erstellen</legend>
 
 
           <div class="uk-margin">
@@ -31,7 +33,8 @@
 
         </fieldset>
       </form>
-
+    </div>
+  </div>
 
 
   <div class="uk-width-auto@m">
@@ -49,20 +52,6 @@
 
 <script>
 import '../assets/js/serialport'
-import anime from 'animejs'
-
-
-var lineDrawing = anime({
-  targets: '#drawing .lines path',
-  strokeDashoffset: [anime.setDashoffset, 0],
-  easing: 'easeInOutSine',
-  duration: 1500,
-  delay: function(el, i) { return i * 250 },
-  direction: 'alternate',
-  loop: true
-});
-
-
 
 export default {
   name: 'vue-welcome',
