@@ -1,8 +1,8 @@
 <template>
 <div class="uk-animation-fade uk-child-width-expand@s uk-width-1-1" uk-grid>
 
-      <form @submit.prevent="onSubmit">
-        <fieldset class="uk-fieldset">
+      <form @submit.prevent="onSubmit" class="uk-position-center uk-width-1-2">
+        <fieldset class="uk-fieldset uk-width-1-1">
 
           <legend class="uk-legend">Welcome</legend>
 
@@ -49,19 +49,6 @@
 
 <script>
 import '../assets/js/serialport'
-import anime from 'animejs'
-
-
-var lineDrawing = anime({
-  targets: '#drawing .lines path',
-  strokeDashoffset: [anime.setDashoffset, 0],
-  easing: 'easeInOutSine',
-  duration: 1500,
-  delay: function(el, i) { return i * 250 },
-  direction: 'alternate',
-  loop: true
-});
-
 
 
 export default {

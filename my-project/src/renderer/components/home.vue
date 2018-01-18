@@ -2,7 +2,7 @@
 <div>
   <vue-nav></vue-nav>
 
-  <div class="content uk-width-expand">
+  <div class="content">
     <transition name="slider">
     <router-view ></router-view>
 </transition>
