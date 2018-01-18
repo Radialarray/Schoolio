@@ -3,7 +3,7 @@
   <vue-nav></vue-nav>
 
   <div class="content">
-    <transition name="slider">
+    <transition name="fade">
     <router-view ></router-view>
 </transition>
 

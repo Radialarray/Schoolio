@@ -43,26 +43,26 @@ function openPort (portObj) {
   })
 }
 
-// Declare variables
-let obj
-let filePath = './data/userdata.json'
-// Read the file and send to the callback
-fs.readFile(filePath, readFromJson)
-
-// Write the callback function
-function readFromJson (err, data) {
-  if (err) throw err
-  obj = JSON.parse(data)
-  console.log(obj)
-  writeToJson(obj)
-}
-
-function writeToJson (content) {
-  let stringied = JSON.stringify(content)
-  fs.writeFile('./data/userdata.json', stringied, 'utf8', function (err) {
-    if (err) {
-      return console.log(err)
-    }
-    console.log('The file was saved!')
-  })
-}
+// // Declare variables
+// let obj
+// let filePath = './data/userdata.json'
+// // Read the file and send to the callback
+// fs.readFile(filePath, readFromJson)
+//
+// // Write the callback function
+// function readFromJson (err, data) {
+//   if (err) throw err
+//   obj = JSON.parse(data)
+//   console.log(obj)
+//   writeToJson(obj)
+// }
+//
+// function writeToJson (content) {
+//   let stringied = JSON.stringify(content)
+//   fs.writeFile('./data/userdata.json', stringied, 'utf8', function (err) {
+//     if (err) {
+//       return console.log(err)
+//     }
+//     console.log('The file was saved!')
+//   })
+// }

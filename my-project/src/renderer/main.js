@@ -12,6 +12,7 @@ import VeeValidate from 'vee-validate'
 import './assets/css/styles.min.css'
 import 'uikit'
 import '../../node_modules/vuetify/dist/vuetify.min.css'
+import '../../node_modules/vue2-animate/dist/vue2-animate.min.css'
 
 import App from './App'
 import router from './router'
