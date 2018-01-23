@@ -1,3 +1,6 @@
+// import Serialport from 'serialport'
+import {stillConnected} from './serialReadRenderer'
+
 import Vue from 'vue'
 import axios from 'axios'
 import VueProgress from 'vue-progress-path'
@@ -18,9 +21,7 @@ import App from './App'
 import router from './router'
 import store from './store'
 
-import serialport from './assets/js/serialport'
-
-if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
+if (!process.env.IS_WEB) { Vue.use(require('vue-electron')) }
 Vue.http = Vue.prototype.$http = axios
 Vue.config.productionTip = false
 
@@ -50,12 +51,13 @@ Vue.component('VueDashboard', VueDashboard)
 
 new Vue({
   template: '<App/>',
-  components: { App },
+  components: {
+    App
+  },
   router,
   store,
   data () {
-    return {
-      gaugeValue: 0
-    }
+    return {gaugeValue: 0}
   }
 }).$mount('#app')
+console.log(stillConnected)

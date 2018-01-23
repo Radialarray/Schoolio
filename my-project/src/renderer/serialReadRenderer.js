@@ -2,10 +2,13 @@
 // be executed in the renderer process for that window.
 // All of the Node.js APIs are available in this process.
 
-const Serialport = require('serialport')
-const fs = require('fs')
+// export const Serialport = require('serialport')
+import Serialport from 'serialport'
+var port
 
-let port
+var uid = '04 22 197 26 170 82 129'
+
+export var stillConnected = false
 
 Serialport.list((err, ports) => {
   console.log('ports', ports)
@@ -38,11 +41,27 @@ function openPort (portObj) {
     console.log('Port Opened')
     port.on('data', (data) => {
       /* get a buffer of data from the serial port */
-      console.log(data.toString())
+      // return console.log(data.toString())
+      receiveMessage(port)
     })
   })
 }
 
+function receiveMessage () {
+  port.on('data', (data) => {
+    /* get a buffer of data from the serial port */
+    console.log('yeassss')
+    return console.log(data.toString())
+  })
+}
+
+export function checkMessage (message) {
+  if (message === uid) {
+    return true
+  } else {
+    return false
+  }
+}
 // // Declare variables
 // let obj
 // let filePath = './data/userdata.json'

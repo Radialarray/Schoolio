@@ -72,7 +72,6 @@
 </template>
 
 <script>
-import '../assets/js/serialport'
 
 export default {
   name: 'vue-welcome',
