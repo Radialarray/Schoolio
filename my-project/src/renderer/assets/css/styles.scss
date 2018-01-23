@@ -8,6 +8,12 @@
 }
 // 4. Import UIkit.
 @import "../../../../node_modules/uikit/src/scss/uikit-theme.scss";
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+
+body,html, a, h1,h2,h3,h4,h5,h6{
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+}
 
 body,
 html {
@@ -15,8 +21,8 @@ html {
 }
 
 .content {
-  $margin-content: 2em;
-  margin-top: $margin-content/2;
+  $margin-content: 4rem;
+  margin-top: $margin-content;
   margin-left: $margin-content;
   margin-right: $margin-content;
 }
@@ -48,40 +54,10 @@ html {
   right: 0;
 }
 
-.vue-progress-path path {
-  stroke-width: 12;
-}
 
-.vue-progress-path .progress {
-  stroke: red;
-}
 
-.vue-progress-path .background {
-  stroke: #edd;
-}
-
-.progress-linear {
-  height: 2rem !important;
-}
-
-.progress-linear__background {
-  background: $subaccent;
-}
-
-.progress-linear__bar__determinate {
-  background: $accent;
-}
-
-.color-accent {
-  background: $accent;
-}
-
-.nav-circle {
-  position: relative !important;
-  height: 50px !important;
-  width: 50px !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
+.turquoise {
+  background: #91C2C6;
 }
 
 .spacer {
@@ -223,4 +199,78 @@ html {
 
 .slider-enter-to, .slider-leave {
   transform: translateX(0);
+}
+
+
+.nav-circle {
+  position: relative !important;
+  height: 4rem !important;
+  width: 4rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  border: solid 1px white;
+  @include box-shadow(0px,5px,13px,rgba(0, 0, 0, 0.25),false);
+  @include transition(all,.3s, ease)
+}
+
+.nav-circle:active {
+  @include box-shadow(0px,5px,13px,rgba(0, 0, 0, 0.25),true);
+  @include transition(all,.3s, ease)
+}
+
+.nav-circle .content {
+  position: absolute;
+  top: 50%;
+  left: 50;
+  transform: translate(-50%, -50%);
+}
+
+
+.circle {
+    font-size: 0.889em;
+    position: relative;
+    text-align: center;
+    text-transform: lowercase;
+    border-radius: 50%;
+    @include box-shadow(0px,5px,13px,rgba(0, 0, 0, 0.25),false);
+    @include box-shadow(0px,5px,13px,rgba(0, 0, 0, 0),true);
+    @include transition(all,0.3s, ease);
+
+    a {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    &:hover {
+        // box-shadow: 0 0 0 7px #fff;
+        @include box-shadow(0px,5px,13px,rgba(0, 0, 0, 0),false);
+        @include box-shadow(0px,5px,13px,rgba(0, 0, 0, 0.25),true);
+
+    }
+}
+
+.status-circle {
+    height: 1.625rem; /* 26/16 */
+    width: 1.625rem; /* 26/16 */
+    background: red;
+    margin-right: 0.5rem;
+}
+
+.help-circle {
+  height: 2.5rem;
+  width: 2.5rem;
+  line-height: 2.5rem;
+  background: #fff;
+  margin-right: 0.5rem;
+  border: 1px solid rgba(#ffffff, 0.6);
+}
+
+.profile-pic {
+  height: 6rem; /* 26/16 */
+  width: 6rem; /* 26/16 */
+  background: red;
+  margin-right: 0.5rem;
 }

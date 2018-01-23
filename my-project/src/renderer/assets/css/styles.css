@@ -8,6 +8,7 @@
  * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
  * 3. Style
  */
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900");
 html {
   /* 1 */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -10749,6 +10750,7 @@ iframe.uk-cover {
   }
 }
 
+/* @include transition(all,2s,ease-out); */
 /* ========================================================================
    Component: Base
  ========================================================================== */
@@ -21499,15 +21501,20 @@ iframe.uk-cover {
   }
 }
 
+body, html, a, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+}
+
 body,
 html {
   font-size: 1em;
 }
 
 .content {
-  margin-top: 1em;
-  margin-left: 2em;
-  margin-right: 2em;
+  margin-top: 4rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
 }
 
 .task {
@@ -21537,40 +21544,8 @@ html {
   right: 0;
 }
 
-.vue-progress-path path {
-  stroke-width: 12;
-}
-
-.vue-progress-path .progress {
-  stroke: red;
-}
-
-.vue-progress-path .background {
-  stroke: #edd;
-}
-
-.progress-linear {
-  height: 2rem !important;
-}
-
-.progress-linear__background {
-  background: #d2e5e7;
-}
-
-.progress-linear__bar__determinate {
-  background: #ffe196;
-}
-
-.color-accent {
-  background: #ffe196;
-}
-
-.nav-circle {
-  position: relative !important;
-  height: 50px !important;
-  width: 50px !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
+.turquoise {
+  background: #91C2C6;
 }
 
 .spacer {
@@ -21717,4 +21692,102 @@ html {
 
 .slider-enter-to, .slider-leave {
   transform: translateX(0);
+}
+
+.nav-circle {
+  position: relative !important;
+  height: 4rem !important;
+  width: 4rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  border: solid 1px white;
+  -webkit-box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.25);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.nav-circle:active {
+  -webkit-box-shadow: inset 0px 5px 13px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 0px 5px 13px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0px 5px 13px rgba(0, 0, 0, 0.25);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.nav-circle .content {
+  position: absolute;
+  top: 50%;
+  left: 50;
+  transform: translate(-50%, -50%);
+}
+
+.circle {
+  font-size: 0.889em;
+  position: relative;
+  text-align: center;
+  text-transform: lowercase;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: inset 0px 5px 13px transparent;
+  -moz-box-shadow: inset 0px 5px 13px transparent;
+  box-shadow: inset 0px 5px 13px transparent;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.circle a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.circle:hover {
+  -webkit-box-shadow: 0px 5px 13px transparent;
+  -moz-box-shadow: 0px 5px 13px transparent;
+  box-shadow: 0px 5px 13px transparent;
+  -webkit-box-shadow: inset 0px 5px 13px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 0px 5px 13px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0px 5px 13px rgba(0, 0, 0, 0.25);
+}
+
+.status-circle {
+  height: 1.625rem;
+  /* 26/16 */
+  width: 1.625rem;
+  /* 26/16 */
+  background: red;
+  margin-right: 0.5rem;
+}
+
+.help-circle {
+  height: 2.5rem;
+  width: 2.5rem;
+  line-height: 2.5rem;
+  background: #fff;
+  margin-right: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.profile-pic {
+  height: 6rem;
+  /* 26/16 */
+  width: 6rem;
+  /* 26/16 */
+  background: red;
+  margin-right: 0.5rem;
 }

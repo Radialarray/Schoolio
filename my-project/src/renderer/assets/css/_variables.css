@@ -10748,3 +10748,5 @@ iframe.uk-cover {
     page-break-after: avoid;
   }
 }
+
+/* @include transition(all,2s,ease-out); */

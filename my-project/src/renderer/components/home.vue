@@ -7,7 +7,8 @@
       name="custom-classes-transition"
       enter-active-class="slideInRight"
       leave-active-class="slideOutLeft"
-    >    <router-view ></router-view>
+    >
+    <router-view></router-view>
 </transition>
 
 </div>

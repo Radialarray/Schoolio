@@ -7,8 +7,16 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: require('@/components/welcome').default
-    }, {
+      component: require('@/components/newHome').default,
+      children: [
+        {
+          path: '',
+          name: 'dashboard',
+          component: require('@/components/dashboard').default
+        }
+      ]
+    },
+    {
       path: '/landing-page',
       component: require('@/components/home').default,
       children: [
