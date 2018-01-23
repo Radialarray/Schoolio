@@ -1,57 +1,59 @@
 <template>
-<div class="uk-width-1-1 uk-height-1-1 uk-position-relative uk-flex uk-flex-around uk-flex-column">
-  <div class="uk-width-1-1">
-    <ul class="top-nav uk-flex uk-flex-between uk-flex-top uk-flex-wrap">
-      <li>
-        <router-link to="/">Home</router-link>
-      </li>
-      <li class="toggles">
-        <a href="#">Sperren</a>
-      </li>
-      <li class="toggles">
-        <a href="#">Spiegeln</a>
-      </li>
-    </ul>
-  </div>
+<div class="uk-width-1-1 uk-height-1-1 uk-position-relative uk-flex uk-flex-between uk-flex-column nav-padding">
+  <div>
+    <div class="uk-width-1-1 bottom-margin">
+      <ul class="top-nav  uk-flex uk-flex-between uk-flex-top uk-flex-wrap">
+        <li>
+          <router-link to="/">Home</router-link>
+        </li>
+        <li class="toggles">
+          <a href="#">Sperren</a>
+        </li>
+        <li class="toggles">
+          <a href="#">Spiegeln</a>
+        </li>
+      </ul>
+    </div>
 
-  <div class="uk-width-1-1 uk-flex uk-flex-center uk-flex-middle">
-    <div class="uk-border-circle status-circle"></div>
-    <p>Status</p>
-  </div>
+    <div class="uk-width-1-1 bottom-margin uk-flex uk-flex-center uk-flex-middle">
+      <div class="uk-border-circle status-circle"></div>
+      <p>Status</p>
+    </div>
 
-  <div class="uk-width-1-1">
-    <div class="uk-grid-small	uk-child-width-1-2@s uk-flex-left uk-text-center" uk-grid>
-      <div>
-        <router-link to="create-task">
+    <div class="uk-width-1-1 flex-center">
+      <div class="uk-grid-small	uk-child-width-1-2@s uk-flex-left uk-text-center" uk-grid>
+        <div>
+          <router-link to="create-task">
+            <div class="uk-card uk-card-default uk-card-body box main-menu-button">
+              <div class="box-content">
+                <p>Aufgabe erstellen</p>
+                <img class="uk-width-1-2" src="../assets/icons/noun_1409605_cc.svg">
+              </div>
+            </div>
+          </router-link>
+        </div>
+        <div>
           <div class="uk-card uk-card-default uk-card-body box main-menu-button">
             <div class="box-content">
-              <p>Aufgabe erstellen</p>
-              <img class="uk-width-1-2" src="../assets/icons/noun_1409605_cc.svg">
+              <p>Aktuelle Aufgaben</p>
+              <img class="uk-width-1-2" src="../assets/icons/noun_317197_cc.svg">
             </div>
           </div>
-        </router-link>
-      </div>
-      <div>
-        <div class="uk-card uk-card-default uk-card-body box main-menu-button">
-          <div class="box-content">
-            <p>Aktuelle Aufgaben</p>
-            <img class="uk-width-1-2" src="../assets/icons/noun_317197_cc.svg">
+        </div>
+        <div>
+          <div class="uk-card uk-card-default uk-card-body box main-menu-button">
+            <div class="box-content">
+              <p>Klassen</p>
+              <img class="uk-width-1-2" src="../assets/icons/noun_353698_cc.svg">
+            </div>
           </div>
         </div>
-      </div>
-      <div>
-        <div class="uk-card uk-card-default uk-card-body box main-menu-button">
-          <div class="box-content">
-            <p>Klassen</p>
-            <img class="uk-width-1-2" src="../assets/icons/noun_353698_cc.svg">
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="uk-card uk-card-default uk-card-body box main-menu-button">
-          <div class="box-content">
-            <p>Aufgaben verteilen</p>
-            <img class="uk-width-1-2" src="../assets/icons/noun_830088_cc.svg">
+        <div>
+          <div class="uk-card uk-card-default uk-card-body box main-menu-button">
+            <div class="box-content">
+              <p>Aufgaben verteilen</p>
+              <img class="uk-width-1-2" src="../assets/icons/noun_830088_cc.svg">
+            </div>
           </div>
         </div>
       </div>
@@ -60,7 +62,8 @@
 
 
 
-  <div class="uk-width-1-1 uk-flex uk-flex-middle uk-flex-between	 to-bottom uk-position-absolute uk-margin-remove">
+
+  <div class="uk-width-1-1 uk-flex uk-flex-middle uk-flex-between uk-margin-remove">
     <p class="uk-margin-remove">
       School by SchoolSystems
     </p>
@@ -81,9 +84,21 @@ export default {
 <style lang="scss">
 @import "../assets/css/styles.scss";
 
+.nav-padding {
+  $pad: 73px;
+  padding-left: $pad;
+  padding-right: $pad;
+  padding-top: $pad;
+  padding-bottom: $pad/2;
+}
+
 .to-bottom {
     position: absolute;
     bottom: 0;
+}
+
+.bottom-margin {
+  margin-bottom: 2em;
 }
 
 .main-menu-button {
@@ -94,7 +109,7 @@ export default {
 
 .top-nav {
     padding: 0;
-    margin: 2em 0;
+    margin: 0;
     list-style: none;
 
     @media only screen and (max-width: 1000px) {
@@ -141,11 +156,13 @@ export default {
             @include box-shadow(0px,5px,13px,rgba(0, 0, 0, 0.25),true);
 
         }
-        @media only screen and (min-width: 1690px) {
-          width: 7rem;
-          height: 7rem;
-          line-height: 7rem;
+
+        @media only screen and (min-width: 1750px) {
+          width: 116px;
+          height: 116px;
+          line-height: 116px;
         }
+
         @media only screen and (max-width: 1500px) {
           width: 5rem;
           height: 5rem;
@@ -170,5 +187,24 @@ export default {
     }
 }
 
+.flex-center {
+  align-self: flex-end;
+}
+
+.status-circle {
+    height: 26px;
+    width: 26px;
+    background: red;
+    margin-right: 0.5rem;
+}
+
+.help-circle {
+  height: 40px !important;
+  width: 40px !important;
+  line-height: 40px;
+  background: #fff;
+  margin-right: 0.5rem;
+  border: 1px solid rgba(#ffffff, 0.6);
+}
 
 </style>

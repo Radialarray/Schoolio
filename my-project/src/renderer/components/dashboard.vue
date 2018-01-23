@@ -3,11 +3,9 @@
 
   <div class="uk-flex">
     <div>
-      <div>
-        <img class="uk-border-circle profile-pic" src="../assets/img/fabian-moller-401639.jpg" />
-      </div>
+        <img class="uk-border-circle profile-pic uk-margin-right" src="../assets/img/fabian-moller-401639.jpg" />
     </div>
-    <div class="uk-width-expand@m">
+    <div class="uk-width-expand@m uk-margin-bottom">
       <div class="uk-width-1-1 text-black uk-flex uk-margin-bottom">
         <div class="uk-margin-right">Klasse: <span class="uk-text-bold">1B</span></div>
         <div>Fach: <span class="uk-text-bold">Deutsch</span></div>

@@ -1,9 +1,9 @@
 <template>
   <div class="uk-grid-collapse full-height" uk-grid>
-    <div class="uk-background-muted uk-padding uk-height-1-1 uk-width-expand nav turquoise">
+    <div class="uk-background-muted uk-height-1-1 nav turquoise" style="width:27.5%">
     <vue-nav></vue-nav>
 </div>
-<div class="uk-padding uk-light uk-height-1-1 uk-width-3-4">
+<div class="uk-padding uk-light uk-height-1-1 uk-width-expand">
     <transition
       name="custom-classes-transition"
       enter-active-class="slideInRight"
