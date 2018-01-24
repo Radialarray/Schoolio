@@ -3,15 +3,21 @@
   <div>
     <div class="uk-width-1-1 bottom-margin">
       <ul class="top-nav  uk-flex uk-flex-between uk-flex-top uk-flex-wrap">
-        <li>
-          <router-link to="/">Home</router-link>
+        <li class="button">
+          <router-link to="/">
+            <img class="icon" src="../assets/icons/home.svg">
+          </router-link>
         </li>
-        <li class="toggles">
-          <a href="#">Sperren</a>
-        </li>
-        <li class="toggles">
-          <a href="#">Spiegeln</a>
-        </li>
+        <li class="button toggles">
+          <router-link to="/">
+            <img class="icon" src="../assets/icons/spiegeln.svg">
+          </router-link>
+          </li>
+          <li class="button toggles">
+            <router-link to="/">
+              <img class="icon" style="height:38px;width:38px;" src="../assets/icons/lock.svg">
+            </router-link>
+          </li>
       </ul>
     </div>
 
@@ -24,25 +30,25 @@
       <router-link to="create-task" class="square">
         <div class="square-content">
           <!-- <p>Aufgabe erstellen</p> -->
-          <img class="icon" src="../assets/icons/noun_1409605_cc.svg">
+          <img class="icon" src="../assets/icons/plus.svg">
         </div>
     </router-link>
       <div class="square">
         <div class="square-content">
           <!-- <p>Aktuelle Aufgaben</p> -->
-          <img class="icon" src="../assets/icons/noun_317197_cc.svg">
+          <img class="icon" src="../assets/icons/aufgabenliste.svg">
         </div>
       </div>
       <div class="square">
         <div class="square-content">
           <!-- <p>Klassen</p> -->
-          <img class="icon" src="../assets/icons/noun_353698_cc.svg">
+          <img class="icon" src="../assets/icons/klassen.svg">
         </div>
       </div>
       <div class="square">
         <div class="square-content">
           <!-- <p>Aufgaben verteilen</p> -->
-          <img class="icon" src="../assets/icons/noun_830088_cc.svg">
+          <img class="icon" src="../assets/icons/verteilen.svg">
         </div>
       </div>
     </div>
@@ -142,8 +148,11 @@ export default {
         line-height: 6rem;
         border: solid 1px #fff;
         border-radius: 50%;
-        @include box-shadow(0px,5px,13px,rgba(0, 0, 0, 0.25),false);
-        @include box-shadow(0px,5px,13px,rgba(0, 0, 0, 0),true);
+        // box-shadow: 0 5px 13px rgba(0, 0, 0, 0.25), inset 0px,5px,13px,rgba(0, 0, 0, 0);
+        box-shadow: 0 5px 13px rgba(0, 0, 0, 0.25);
+        // @include box-shadow(0px,5px,13px,rgba(0, 0, 0, 0),true);
+        // box-shadow: 0px,5px,13px,rgba(0, 0, 0, 0.25),false);
+
         @include transition(all,0.3s, ease);
 
         a {
@@ -156,9 +165,9 @@ export default {
 
         &:hover {
             // box-shadow: 0 0 0 7px #fff;
-            @include box-shadow(0px,5px,13px,rgba(0, 0, 0, 0),false);
-            @include box-shadow(0px,5px,13px,rgba(0, 0, 0, 0.25),true);
-
+            // @include box-shadow(0px,5px,13px,rgba(0, 0, 0, 0),false);
+            // @include box-shadow(0px,5px,13px,rgba(0, 0, 0, 0.25),true);
+            // box-shadow: 0 5px 13px rgba(0, 0, 0, 0), inset 0px,5px,13px,rgba(0, 0, 0, 0.25);
         }
 
         @media only screen and (min-width: 1750px) {
@@ -189,6 +198,10 @@ export default {
         background-color: #fff;
         border: solid 1px #FAB301;
     }
+
+    .button {
+
+    }
 }
 
 
@@ -204,14 +217,7 @@ export default {
     margin-right: 0.5rem;
 }
 
-.help-circle {
-    height: 40px !important;
-    width: 40px !important;
-    line-height: 40px;
-    background: #fff;
-    margin-right: 0.5rem;
-    border: 1px solid rgba(#ffffff, 0.6);
-}
+
 
 .square-container {
     display: -webkit-flex;
@@ -237,13 +243,20 @@ export default {
     margin-bottom: 2%;
 }
 
-.square:after {
+.square::after {
     content: "";
     display: block;
     padding-bottom: 100%;
     background: rgba(255,255,255,0.15) !important;
     border: 1px solid rgba(#ffffff, 0.6) !important;
     border-radius: 9px;
+@include transition(all, 0.2s, ease-in-out)
+
+}
+
+.square:hover::after {
+  background: rgba(255,255,255,0.5) !important;
+
 }
 
 .square-content {

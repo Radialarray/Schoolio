@@ -10,6 +10,7 @@ import VueDrag from './components/pupils_sortable.vue'
 import VueNav from './components/navigation.vue'
 import VueHome from './components/home.vue'
 import VueDashboard from './components/dashboard.vue'
+import VueStatusbar from './components/statusbar.vue'
 import VeeValidate from 'vee-validate'
 
 import './assets/css/styles.min.css'
@@ -48,6 +49,7 @@ Vue.component('VueDrag', VueDrag)
 Vue.component('VueNav', VueNav)
 Vue.component('VueHome', VueHome)
 Vue.component('VueDashboard', VueDashboard)
+Vue.component('VueStatusbar', VueStatusbar)
 
 new Vue({
   template: '<App/>',

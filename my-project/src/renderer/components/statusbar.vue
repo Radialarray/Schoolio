@@ -1,7 +1,6 @@
 <template>
-<div class="content">
 
-  <!-- <div class="uk-flex">
+  <div class="uk-flex">
     <div>
         <img class="uk-border-circle profile-pic uk-margin-right" src="../assets/img/fabian-moller-401639.jpg" />
     </div>
@@ -24,30 +23,13 @@
         </div>
       </div>
     </div>
-  </div> -->
-
-  <vue-statusbar></vue-statusbar>
-
-  <div class="uk-grid-small uk-child-width-expand@s uk-text-center" uk-grid>
-
-    <div class="uk-width-expand uk-overflow-auto">
-      <transition>
-      <vue-drag></vue-drag>
-      <!-- <router-view></router-view> -->
-      </transition>
-    </div>
-
   </div>
-
-
-
-</div>
 
 </template>
 
 <script>
 export default {
-  name: 'vue-dashboard',
+  name: 'vue-statusbar',
   data() {
     return {
       fill: {

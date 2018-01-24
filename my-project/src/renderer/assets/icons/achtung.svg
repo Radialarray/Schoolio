@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="29px" height="42px" viewBox="0 0 29 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>!</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-11.0%" y="-8.5%" width="122.0%" height="122.0%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.258774909 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-size="24" letter-spacing="-0.1171875" font-family="Lato-Black, Lato" font-weight="700">
+        <g id="Dashboard/Home" transform="translate(-823.000000, -260.000000)" fill="#FFFFFF">
+            <g id="Kind1" filter="url(#filter-1)" transform="translate(670.000000, 253.000000)">
+                <g id="Group-2" transform="translate(150.000000, 5.000000)">
+                    <text id="!">
+                        <tspan x="13.0465937" y="27">!</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

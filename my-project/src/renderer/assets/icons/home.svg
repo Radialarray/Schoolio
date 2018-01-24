@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="86px" height="89px" viewBox="0 0 86 89" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Page 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-19.0%" y="-14.7%" width="137.9%" height="137.9%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.258774909 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Schüler-Home" transform="translate(-89.000000, -106.000000)" fill="#FFFFFF">
+            <g id="Home" filter="url(#filter-1)" transform="translate(73.000000, 90.000000)">
+                <path d="M82.2470305,87.2248062 L36.5021799,87.2248062 C34.9773516,87.2248062 33.6558337,86.0168605 33.6558337,84.5069285 L33.6558337,54.5096112 L31.7243844,54.5096112 C30.8094874,54.5096112 29.8945904,54.1069627 29.284659,53.3016656 C28.4714173,52.0937199 28.6747277,50.5837878 29.5896247,49.6778286 L56.2232933,24.512294 C57.8497769,23.0023619 60.5944679,23.0023619 62.2209515,24.512294 L88.7529648,49.5771665 C89.6678618,50.2818014 90.0744827,51.2884228 89.8711723,52.2950442 C89.5662066,53.603652 88.4479992,54.5096112 87.1264813,54.5096112 L85.0933768,54.5096112 L85.0933768,84.5069285 C84.9917216,86.0168605 83.7718589,87.2248062 82.2470305,87.2248062 Z M59.4495337,26.349378 C58.9460511,26.349378 58.543265,26.552423 58.2411754,26.8569905 L31.8586848,52.2376152 C31.8586848,52.2376152 31.7579883,52.3391377 31.7579883,52.5421827 C31.8586848,52.7452277 31.9593813,52.7452277 31.9593813,52.7452277 L36.4907251,52.7452277 L36.4907251,85.5369947 C36.4907251,85.6385172 36.5914217,85.7400397 36.6921182,85.7400397 L82.0055562,85.7400397 C82.1062528,85.7400397 82.2069493,85.6385172 82.2069493,85.5369947 L82.2069493,52.7452277 L86.7382931,52.7452277 C86.7382931,52.7452277 86.9396861,52.7452277 86.9396861,52.6437052 C86.9396861,52.5421827 86.9396861,52.4406602 86.8389896,52.3391377 L60.456499,26.958513 C60.3558025,26.552423 59.8523199,26.349378 59.4495337,26.349378 Z" id="Page-1"></path>
+            </g>
+        </g>
+    </g>
+</svg>

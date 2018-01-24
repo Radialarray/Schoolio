@@ -5,9 +5,28 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    // {
+    //   path: '/',
+    //   component: require('@/components/welcome').default,
+    //   name: '',
+    //   children: [
+    //     {
+    //       path: '',
+    //       name: 'Home',
+    //       component: require('@/components/home').default,
+    //       children: [
+    //         {
+    //           path: '',
+    //           name: 'Dashboard',
+    //           component: require('@/components/LandingPage').default
+    //         }
+    //       ]
+    //     }
+    //   ]
+    // },
     {
       path: '/',
-      component: require('@/components/newHome').default,
+      component: require('@/components/home').default,
       name: '',
       children: [
         {
