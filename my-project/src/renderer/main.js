@@ -1,5 +1,5 @@
 // import Serialport from 'serialport'
-import {stillConnected} from './serialReadRenderer'
+import {stillConnected, uid} from './serialReadRenderer'
 
 import Vue from 'vue'
 import axios from 'axios'

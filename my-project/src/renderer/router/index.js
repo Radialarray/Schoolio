@@ -64,7 +64,7 @@ export default new Router({
       children: [
         {
           path: '',
-          name: 'landing-page',
+          name: 'Aufgabe erstellen',
           component: require('@/components/createTask').default
         }
       ]

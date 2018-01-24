@@ -35,7 +35,7 @@
 
         <transition name="custom-classes-transition" enter-active-class="fadeInRight" leave-active-class="fadeOutLeft">
           <div v-if="onboardingPage === 3" class="uk-width-1-1">
-            <legend class="uk-legend">Yuhuuuuu</legend>
+            <h1 class="dosis">Willkommen {{name}}!</h1>
           </div>
         </transition>
 
@@ -65,6 +65,7 @@
 
 <script>
 import store from '../store'
+import {stillConnected, uid} from '../serialReadRenderer'
 
 export default {
   name: 'vue-welcome',
@@ -82,14 +83,15 @@ export default {
     onSubmit() {
       this.onboardingPage++
         if (this.onboardingPage > 3) {
+          store.commit('ADD_USER', { user_name: this.name,
+            user_password: this.password,
+            user_id: uid})
+        console.log(this.name)
           this.$router.push({
             path: '/dashboard'
           })
         }
-        store.commit('ADD_USER', { user_name: this.name,
-          user_password: this.password,
-          user_id: '3333'})
-      console.log(this.name)
+
     },
     validateBeforeSubmit() {
       this.$validator.validateAll().then((result) => {

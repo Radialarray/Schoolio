@@ -73,16 +73,28 @@ export default {
       breadcrumb: 'Home'
     }
   },
+  methods: {
+    replaceSlash() {
+      let str = this.$route.name
+      if (typeof str != 'undefined') {
+      str = str.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '');
+      this.breadcrumb = str
+    }
+  }
+},
   mounted: function () {
-    let str = this.$route.name
-    str = str.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '');
-    this.breadcrumb = str
+    // let str = this.$route.name
+    // if (typeof str != 'undefined') {
+    // str = str.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '');
+    // this.breadcrumb = str
+    // }
+    this.replaceSlash()
   },
   watch: {
     '$route' (to, from) {
-      let str = this.$route.name
-      str = str.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '');
-      this.breadcrumb = str    }
+      this.replaceSlash()
+
+        }
   }
 }
 </script>

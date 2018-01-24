@@ -6,7 +6,7 @@
 import Serialport from 'serialport'
 var port
 
-var uid = '04 22 197 26 170 82 129'
+export var uid = '04 22 197 26 170 82 129'
 
 export var stillConnected = false
 
@@ -50,8 +50,13 @@ function openPort (portObj) {
 function receiveMessage () {
   port.on('data', (data) => {
     /* get a buffer of data from the serial port */
-    console.log('yeassss')
-    return console.log(data.toString())
+    // console.log('yeassss')
+    var str = data.toString()
+    if (str.search('Card UID:') > 0) {
+      console.log('TREFFER')
+      str = str.replace(/[^\d]/g, '')
+    }
+    return console.log(str)
   })
 }
 
