@@ -48,40 +48,6 @@
       </div>
     </div>
   </draggable>
-
-  <!-- <draggable v-model="items" :options="{group:'people'}" @start="drag=true" @end="drag=false" class="uk-flex uk-margin-bottom">
-      <div v-for="(item, index) in items" v-if="item.val >= 80" class="uk-card uk-card-default uk-card-body border uk-margin-right">
-        <div class="centerAll" :title="item.message +' ist bei ' + item.val + '%'" uk-tooltip>
-          <v-progress-circular class="centerAll" v-bind:size="80" v-bind:width="10" v-bind:rotate="360" v-bind:value="item.val" v-bind:color="color0">
-            <img class="img-rounded" :src="imageLink" />
-          </v-progress-circular>
-        </div>
-        {{ item.message }}
-      </div>
-    </draggable>
-
-
-    <draggable v-model="items" :options="{group:'people'}" @start="drag=true" @end="drag=false" class="uk-flex uk-margin-bottom">
-      <div v-for="(item, index) in items" v-if="item.val >20 && item.val < 80" class="uk-card uk-card-default uk-card-body border uk-margin-right">
-        <div class="centerAll" :title="item.message +' ist bei ' + item.val + '%'" uk-tooltip>
-          <v-progress-circular class="centerAll" v-bind:size="80" v-bind:width="10" v-bind:rotate="360" v-bind:value="item.val" v-bind:color="color50">
-            <img class="img-rounded" :src="imageLink" />
-          </v-progress-circular>
-        </div>
-        {{ item.message }}
-      </div>
-    </draggable>
-
-    <draggable v-model="items" :options="{group:'people'}" @start="drag=true" @end="drag=false" class="uk-flex uk-margin-bottom">
-      <div v-for="(item, index) in items" v-if="item.val <= 20" class="uk-card uk-card-default uk-card-body border uk-margin-right">
-        <div class="centerAll" :title="item.message +' ist bei ' + item.val + '%'" uk-tooltip>
-          <v-progress-circular class="centerAll" v-bind:size="80" v-bind:width="10" v-bind:rotate="360" v-bind:value="item.val" v-bind:color="color100">
-            <img class="img-rounded" :src="imageLink" />
-          </v-progress-circular>
-        </div>
-        {{ item.message }}
-      </div>
-    </draggable> -->
 </div>
 </template>
 

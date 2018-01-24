@@ -26,13 +26,13 @@ export default new Router({
     // },
     {
       path: '/',
-      component: require('@/components/home').default,
+      component: require('@/components/welcome').default,
       name: '',
       children: [
         {
           path: '',
           name: 'Home',
-          component: require('@/components/dashboard').default
+          component: require('@/components/home').default
         }
       ]
     },

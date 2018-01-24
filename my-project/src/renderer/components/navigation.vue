@@ -52,12 +52,7 @@
         </div>
       </div>
     </div>
-
   </div>
-
-
-
-
   <div class="uk-width-1-1 uk-flex uk-flex-middle uk-flex-between uk-margin-remove">
     <p class="uk-margin-remove logo">
       School by School<span class="bold">Systems</span>

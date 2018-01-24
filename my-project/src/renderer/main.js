@@ -54,21 +54,33 @@ Vue.component('VueStatusbar', VueStatusbar)
 new Vue({
   template: '<App/>',
   components: {
-    App
+    App,
+    VueCircle,
+    VueDrag,
+    VueNav,
+    VueHome,
+    VueDashboard,
+    VueStatusbar
   },
   router,
   store,
+  VueCircle,
+  VueDrag,
+  VueNav,
+  VueHome,
+  VueDashboard,
+  VueStatusbar,
   data () {
     return {gaugeValue: 0}
-  }
+  },
   // watch: {
   //   '$route' (to, from) {
   //     console.log('route' + this.$route.path)
   //   }
   // }
-  // mounted: function () {
-  //   console.log('route' + this.$route.path)
-  //   // console.log(this.$router)
-  // }
+  mounted: function () {
+    // console.log('route' + this.$route.path)
+    // console.log(this.$router)
+  }
 }).$mount('#app')
 console.log(stillConnected)

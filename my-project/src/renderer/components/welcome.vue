@@ -9,7 +9,7 @@
         <transition name="custom-classes-transition" enter-active-class="fadeInRight" leave-active-class="fadeOutLeft">
           <div v-if="onboardingPage === 1" class="uk-width-1-1 uk-flex uk-flex-between uk-flex-column uk-flex-middle uk-flex-center uk-width-1-1 uk-height-medium">
             <h1 class="dosis">Hallo!</h1>
-              <input v-validate="'required'" class="uk-input input" name="name" type="text" placeholder="Name...">
+              <input v-validate="'required'" class="uk-input input" name="name" type="text" placeholder="Name..." v-model="name">
               <div v-show="errors.any()">
                 <div class="uk-alert alert" v-if="errors.has('name')">
                   Bitte tragen Sie einen Namen ein!
@@ -64,13 +64,17 @@
 </template>
 
 <script>
+import store from '../store'
+
 export default {
   name: 'vue-welcome',
   data() {
     return {
       password: '',
       confirmPassword: '',
-      onboardingPage: 1
+      name: '',
+      onboardingPage: 1,
+      store
     }
   },
   components: {},
@@ -82,6 +86,10 @@ export default {
             path: '/dashboard'
           })
         }
+        store.commit('ADD_USER', { user_name: this.name,
+          user_password: this.password,
+          user_id: '3333'})
+      console.log(this.name)
     },
     validateBeforeSubmit() {
       this.$validator.validateAll().then((result) => {

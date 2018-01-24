@@ -1,31 +1,5 @@
 <template>
 <div class="content">
-
-  <!-- <div class="uk-flex">
-    <div>
-        <img class="uk-border-circle profile-pic uk-margin-right" src="../assets/img/fabian-moller-401639.jpg" />
-    </div>
-    <div class="uk-width-expand@m uk-margin-bottom">
-      <div class="uk-width-1-1 text-black uk-flex uk-margin-bottom">
-        <div class="uk-margin-right">Klasse: <span class="uk-text-bold">1B</span></div>
-        <div>Fach: <span class="uk-text-bold">Deutsch</span></div>
-      </div>
-      <div class="uk-width-1-1">
-        <div class="">
-          <span class="label no-bg uk-align-left uk-margin-small-bottom uk-padding-remove">Unterrichtsbeginn</span>
-          <span class="label no-bg uk-align-right uk-margin-small-bottom uk-padding-remove">Unterrichtsende</span>
-
-          <div class="rounded-corner">
-
-            <v-progress-linear v-model="valueDeterminate" :title="valueDeterminate +' Minuten sind vergangen'" uk-tooltip>
-            </v-progress-linear>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
   <vue-statusbar></vue-statusbar>
 
   <div class="uk-grid-small uk-child-width-expand@s uk-text-center" uk-grid>
@@ -33,7 +7,6 @@
     <div class="uk-width-expand uk-overflow-auto">
       <transition>
       <vue-drag></vue-drag>
-      <!-- <router-view></router-view> -->
       </transition>
     </div>
 
