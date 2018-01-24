@@ -17,58 +17,47 @@
 
     <div class="uk-width-1-1 bottom-margin uk-flex uk-flex-center uk-flex-middle">
       <div class="uk-border-circle status-circle"></div>
-      <p>Status</p>
+      <p>{{breadcrumb}}</p>
     </div>
 
-    <div class="uk-width-1-1 flex-center">
-      <div class="uk-grid-small	uk-child-width-1-2@s uk-flex-left uk-text-center" uk-grid>
-        <div>
-          <router-link to="create-task">
-            <div class="uk-card uk-card-default uk-card-body box main-menu-button">
-              <div class="box-content">
-                <p>Aufgabe erstellen</p>
-                <img class="uk-width-1-2" src="../assets/icons/noun_1409605_cc.svg">
-              </div>
-            </div>
-          </router-link>
+    <div class="square-container">
+      <router-link to="create-task" class="square">
+        <div class="square-content">
+          <!-- <p>Aufgabe erstellen</p> -->
+          <img class="icon" src="../assets/icons/noun_1409605_cc.svg">
         </div>
-        <div>
-          <div class="uk-card uk-card-default uk-card-body box main-menu-button">
-            <div class="box-content">
-              <p>Aktuelle Aufgaben</p>
-              <img class="uk-width-1-2" src="../assets/icons/noun_317197_cc.svg">
-            </div>
-          </div>
+    </router-link>
+      <div class="square">
+        <div class="square-content">
+          <!-- <p>Aktuelle Aufgaben</p> -->
+          <img class="icon" src="../assets/icons/noun_317197_cc.svg">
         </div>
-        <div>
-          <div class="uk-card uk-card-default uk-card-body box main-menu-button">
-            <div class="box-content">
-              <p>Klassen</p>
-              <img class="uk-width-1-2" src="../assets/icons/noun_353698_cc.svg">
-            </div>
-          </div>
+      </div>
+      <div class="square">
+        <div class="square-content">
+          <!-- <p>Klassen</p> -->
+          <img class="icon" src="../assets/icons/noun_353698_cc.svg">
         </div>
-        <div>
-          <div class="uk-card uk-card-default uk-card-body box main-menu-button">
-            <div class="box-content">
-              <p>Aufgaben verteilen</p>
-              <img class="uk-width-1-2" src="../assets/icons/noun_830088_cc.svg">
-            </div>
-          </div>
+      </div>
+      <div class="square">
+        <div class="square-content">
+          <!-- <p>Aufgaben verteilen</p> -->
+          <img class="icon" src="../assets/icons/noun_830088_cc.svg">
         </div>
       </div>
     </div>
+
   </div>
 
 
 
 
   <div class="uk-width-1-1 uk-flex uk-flex-middle uk-flex-between uk-margin-remove">
-    <p class="uk-margin-remove">
-      School by SchoolSystems
+    <p class="uk-margin-remove logo">
+      School by School<span class="bold">Systems</span>
     </p>
     <div class="uk-margin-remove">
-      <div class="uk-align-right uk-margin-remove circle help-circle"><a>?</a></div>
+      <div class="uk-align-right uk-margin-remove circle help-circle">?</div>
     </div>
   </div>
 </div>
@@ -77,7 +66,23 @@
 <script>
 export default {
   name: 'vue-nav',
-  components: {}
+  components: {},
+  data: function() {
+    return {
+      breadcrumb: 'Home'
+    }
+  },
+  mounted: function () {
+    let str = this.$route.name
+    str = str.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '');
+    this.breadcrumb = str
+  },
+  watch: {
+    '$route' (to, from) {
+      let str = this.$route.name
+      str = str.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '');
+      this.breadcrumb = str    }
+  }
 }
 </script>
 
@@ -85,11 +90,8 @@ export default {
 @import "../assets/css/styles.scss";
 
 .nav-padding {
-  $pad: 73px;
-  padding-left: $pad;
-  padding-right: $pad;
-  padding-top: $pad;
-  padding-bottom: $pad/2;
+    $pad: 73px;
+    padding: $pad $pad $pad/2;
 }
 
 .to-bottom {
@@ -98,13 +100,15 @@ export default {
 }
 
 .bottom-margin {
-  margin-bottom: 2em;
+    margin-bottom: 2em;
 }
 
 .main-menu-button {
     background: rgba(255,255,255,0.15) !important;
     border: 1px solid rgba(#ffffff, 0.6) !important;
     border-radius: 9px;
+    width: 50%;
+    height: 50%;
 }
 
 .top-nav {
@@ -113,10 +117,10 @@ export default {
     list-style: none;
 
     @media only screen and (max-width: 1000px) {
-      margin-top: 0;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
+        margin-top: 0;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
     }
 
     li {
@@ -158,26 +162,26 @@ export default {
         }
 
         @media only screen and (min-width: 1750px) {
-          width: 116px;
-          height: 116px;
-          line-height: 116px;
+            width: 116px;
+            height: 116px;
+            line-height: 116px;
         }
 
         @media only screen and (max-width: 1500px) {
-          width: 5rem;
-          height: 5rem;
-          line-height: 5rem;
+            width: 5rem;
+            height: 5rem;
+            line-height: 5rem;
         }
         @media only screen and (max-width: 1290px) {
-          width: 4.5rem;
-          height: 4.5rem;
-          line-height: 4.5rem;
+            width: 4.5rem;
+            height: 4.5rem;
+            line-height: 4.5rem;
         }
         @media only screen and (max-width: 1000px) {
-          margin-bottom: 1rem;
-          width: 6rem;
-          height: 6rem;
-          line-height: 6rem;
+            margin-bottom: 1rem;
+            width: 6rem;
+            height: 6rem;
+            line-height: 6rem;
         }
     }
 
@@ -187,24 +191,85 @@ export default {
     }
 }
 
+
+
 .flex-center {
-  align-self: flex-end;
+    align-self: flex-end;
 }
 
 .status-circle {
     height: 26px;
     width: 26px;
-    background: red;
+    background: #5B7C7E;
     margin-right: 0.5rem;
 }
 
 .help-circle {
-  height: 40px !important;
-  width: 40px !important;
-  line-height: 40px;
-  background: #fff;
-  margin-right: 0.5rem;
-  border: 1px solid rgba(#ffffff, 0.6);
+    height: 40px !important;
+    width: 40px !important;
+    line-height: 40px;
+    background: #fff;
+    margin-right: 0.5rem;
+    border: 1px solid rgba(#ffffff, 0.6);
+}
+
+.square-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: space-between;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-align-content: flex-end;
+    align-content: flex-end;
+}
+
+.square {
+    position: relative;
+    width: 48%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+}
+
+.square:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+    background: rgba(255,255,255,0.15) !important;
+    border: 1px solid rgba(#ffffff, 0.6) !important;
+    border-radius: 9px;
+}
+
+.square-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    // top: 50%;
+    // left: 25%;
+    // transform: translate(-50%,-50%);
+    display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.icon {
+    width: 58px;
+    height: 58px;
+}
+
+.logo {
+  color: rgba(#F8FBFB, 0.5);
+  font-family: 'Dosis', sans-serif;
+}
+
+.logo > .bold {
+  font-weight: bold;
 }
 
 </style>

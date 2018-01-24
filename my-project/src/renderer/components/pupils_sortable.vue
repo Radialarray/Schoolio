@@ -1,6 +1,46 @@
 <template>
 <div>
-        <draggable v-model="items" :options="{group:'people'}" @start="drag=true" @end="drag=false" class="uk-flex uk-margin-bottom">
+  <h1 class="uk-text-left" style="color:black">Hello</h1>
+    <draggable v-model="items" :options="{group:'people'}" @start="drag=true" @end="drag=false" class="uk-grid uk-margin-bottom" style="margin-left:0; padding-left:0;" uk-grid>
+    <div v-for="(item, index) in items" v-if="item.val >80" class="marg-right uk-padding-remove">
+      <div :title="item.message +' ist bei ' + item.val + '%'" uk-tooltip>
+        <div class="outer">
+          <img class="inner img-rounded" :src="imageLink" />
+          <v-progress-circular class="" v-bind:size="169" v-bind:width="10" v-bind:rotate="360" v-bind:value="item.val" v-bind:color="color0">
+          </v-progress-circular>
+        </div>
+      </div>
+    </div>
+  </draggable>
+<hr />
+  <h1 class="uk-text-left" style="color:black">Hello</h1>
+    <draggable v-model="items" :options="{group:'people'}" @start="drag=true" @end="drag=false" class="uk-grid uk-margin-bottom" style="margin-left:0; padding-left:0;" uk-grid>
+    <div v-for="(item, index) in items" v-if="item.val >20 && item.val < 80" class="marg-right uk-padding-remove">
+      <div :title="item.message +' ist bei ' + item.val + '%'" uk-tooltip>
+        <div class="outer">
+          <img class="inner img-rounded" :src="imageLink" />
+          <v-progress-circular class="" v-bind:size="169" v-bind:width="10" v-bind:rotate="360" v-bind:value="item.val" v-bind:color="color50">
+          </v-progress-circular>
+        </div>
+      </div>
+    </div>
+  </draggable>
+  <hr />
+
+  <h1 class="uk-text-left" style="color:black">Hello</h1>
+  <draggable v-model="items" :options="{group:'people'}" @start="drag=true" @end="drag=false" class="uk-grid uk-margin-bottom" style="margin-left:0; padding-left:0;" uk-grid>
+    <div v-for="(item, index) in items" v-if="item.val <= 20" class="marg-right uk-padding-remove">
+      <div :title="item.message +' ist bei ' + item.val + '%'" uk-tooltip>
+        <div class="outer">
+          <img class="inner img-rounded" :src="imageLink" />
+          <v-progress-circular class="" v-bind:size="169" v-bind:width="10" v-bind:rotate="360" v-bind:value="item.val" v-bind:color="color100">
+          </v-progress-circular>
+        </div>
+      </div>
+    </div>
+  </draggable>
+
+        <!-- <draggable v-model="items" :options="{group:'people'}" @start="drag=true" @end="drag=false" class="uk-flex uk-margin-bottom">
       <div v-for="(item, index) in items" v-if="item.val >= 80" class="uk-card uk-card-default uk-card-body border uk-margin-right">
         <div class="centerAll" :title="item.message +' ist bei ' + item.val + '%'" uk-tooltip>
           <v-progress-circular class="centerAll" v-bind:size="80" v-bind:width="10" v-bind:rotate="360" v-bind:value="item.val" v-bind:color="color0">
@@ -32,7 +72,7 @@
         </div>
         {{ item.message }}
       </div>
-    </draggable>
+    </draggable> -->
   </div>
 </template>
 
@@ -46,7 +86,7 @@ export default {
   components: {
     draggable
   },
-  data () {
+  data: function () {
     return {
       interval: {},
       color100: 'red',
@@ -111,7 +151,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import "../assets/css/styles.scss";
+
 .centerAll {
   display: flex;
   justify-content: center;
@@ -123,7 +165,26 @@ export default {
   border-radius: 50%;
 }
 
-.border {
-  /* border: solid black 1px; */
+.marg-right {
+    // margin-right: 5px;
+}
+
+.outer {
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.inner {
+    width: 169px;
+    height: 169px;
+    background-color: #000000;
+        position: absolute;
+    margin-left: auto;
+margin-right: auto;
+border: solid 13px white;
+left: 0;
+right: 0;
+@include box-shadow(0px,5px,13px,rgba(0, 0, 0, .25),false);
 }
 </style>

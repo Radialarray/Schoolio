@@ -59,5 +59,14 @@ new Vue({
   data () {
     return {gaugeValue: 0}
   }
+  // watch: {
+  //   '$route' (to, from) {
+  //     console.log('route' + this.$route.path)
+  //   }
+  // }
+  // mounted: function () {
+  //   console.log('route' + this.$route.path)
+  //   // console.log(this.$router)
+  // }
 }).$mount('#app')
 console.log(stillConnected)

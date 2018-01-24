@@ -9,6 +9,7 @@
  * 3. Style
  */
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900");
+@import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700,800|Lato:300,400,700,900");
 html {
   /* 1 */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -21503,11 +21504,17 @@ iframe.uk-cover {
 
 html {
   font-size: 1em;
+  background-color: rgba(209, 228, 230, 0.16);
 }
 
 body, a, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Dosis', sans-serif;
   font-family: 'Lato', sans-serif;
   font-size: 20px;
+}
+
+hr {
+  border-top-color: rgba(0, 0, 0, 0.16) !important;
 }
 
 .content {
@@ -21533,14 +21540,6 @@ body, a, h1, h2, h3, h4, h5, h6 {
   display: block;
   padding-top: 100%;
   /* initial ratio of 1:1*/
-}
-
-.box-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 .turquoise {

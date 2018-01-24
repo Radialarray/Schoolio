@@ -16,7 +16,9 @@
           <span class="uk-label uk-align-right uk-margin-small-bottom uk-padding-remove">Unterrichtsende</span>
 
           <div class="rounded-corner">
-            <v-progress-linear v-model="valueDeterminate" :title="valueDeterminate +' Minuten sind vergangen'" uk-tooltip></v-progress-linear>
+
+            <v-progress-linear v-model="valueDeterminate" :title="valueDeterminate +' Minuten sind vergangen'" uk-tooltip>
+            </v-progress-linear>
 
           </div>
         </div>
@@ -28,7 +30,9 @@
   <div class="uk-grid-small uk-child-width-expand@s uk-text-center" uk-grid>
 
     <div class="uk-width-expand uk-overflow-auto">
+      <transition>
       <vue-drag></vue-drag>
+      </transition>
     </div>
 
   </div>
@@ -100,5 +104,16 @@ export default {
 
 .text-black {
     color: black;
+}
+
+
+.progress-linear__bar .description {
+  color: #9B9B9B;
+  font-size: 1rem;
+  line-height: 1rem;
+  text-align: right;
+  width: 95%;
+  position:absolute;
+
 }
 </style>

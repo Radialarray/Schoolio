@@ -8,10 +8,11 @@ export default new Router({
     {
       path: '/',
       component: require('@/components/newHome').default,
+      name: '',
       children: [
         {
           path: '',
-          name: 'dashboard',
+          name: 'Home',
           component: require('@/components/dashboard').default
         }
       ]
