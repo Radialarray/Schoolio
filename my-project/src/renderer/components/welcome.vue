@@ -1,6 +1,7 @@
 <template>
 <div class="uk-animation-fade uk-grid-collapse uk-child-width-expand@s" uk-grid>
-  <div class="background">
+
+  <div class="lockscreen">
   </div>
 
   <form @submit.prevent="onSubmit" class="uk-position-center uk-width-1-2">
@@ -9,19 +10,25 @@
         <transition name="custom-classes-transition" enter-active-class="fadeInRight" leave-active-class="fadeOutLeft">
           <div v-if="onboardingPage === 1" class="uk-width-1-1 uk-flex uk-flex-between uk-flex-column uk-flex-middle uk-flex-center uk-width-1-1 uk-height-medium">
             <h1 class="dosis">Hallo!</h1>
-              <input v-validate="'required'" class="uk-input input" name="name" type="text" placeholder="Name..." v-model="name">
-              <div v-show="errors.any()">
-                <div class="uk-alert alert" v-if="errors.has('name')">
-                  Bitte tragen Sie einen Namen ein!
-                </div>
+            <input v-validate="'required'" class="uk-input input" name="name" type="text" placeholder="Name..." v-model="name">
+            <div v-show="errors.any()">
+              <div class="uk-alert alert" v-if="errors.has('name')">
+                Bitte tragen Sie einen Namen ein!
               </div>
-              <input class="uk-input input" type="password" name="password" placeholder="Passwort..." v-validate="'required'" v-model="password">
+            </div>
+            <input class="uk-input input" type="password" name="password" placeholder="Passwort..." v-validate="'required'" v-model="password">
+            <div class="uk-position-relative confirm">
               <input class="uk-input input" type="password" name="confirmPassword" placeholder="Passwort wiederholen" v-validate="'required|confirmed:password'" v-model="confirmPassword">
-              <div v-show="errors.any()">
-                <div class="uk-alert alert" v-if="errors.has('confirmPassword')">
-                  Die Angaben stimmen nicht überein!
-                </div>
+              <button type="submit" class="button" :disabled="errors.any()">
+                              <img class="icon" src="../assets/icons/next.svg">
+                            </button>
+
+            </div>
+            <div v-show="errors.any()">
+              <div class="uk-alert alert" v-if="errors.has('confirmPassword')">
+                Die Angaben stimmen nicht überein!
               </div>
+            </div>
 
 
           </div>
@@ -41,7 +48,7 @@
 
 
       </div>
-      <button type="submit" class="uk-button uk-button-secondary uk-align-center button" :disabled="errors.any()">Fertig</button>
+      <button type="submit" class="uk-button uk-button-secondary uk-align-center" :disabled="errors.any()">Fertig</button>
 
 
     </fieldset>
@@ -65,7 +72,10 @@
 
 <script>
 import store from '../store'
-import {stillConnected, uid} from '../serialReadRenderer'
+import {
+  stillConnected,
+  uid
+} from '../serialReadRenderer'
 
 export default {
   name: 'vue-welcome',
@@ -75,38 +85,54 @@ export default {
       confirmPassword: '',
       name: '',
       onboardingPage: 1,
+      uid: '',
       store
     }
   },
-  components: {},
+  mounted() {
+    this.getUID()
+  },
   methods: {
     onSubmit() {
       this.onboardingPage++
-        if (this.onboardingPage > 3) {
-          store.commit('ADD_USER', { user_name: this.name,
-            user_password: this.password,
-            user_id: uid})
-        console.log(this.name)
-          this.$router.push({
-            path: '/dashboard'
-          })
+        if (this.onboardingPage == 2) {
+          console.log("Checking for NFC Tag")
+          this.waitUID()
         }
-
     },
-    validateBeforeSubmit() {
-      this.$validator.validateAll().then((result) => {
-        if (result) {
-          // eslint-disable-next-line
-          alert('From Submitted!');
-          return
-        }
-
-        alert('Correct them errors!')
+    getUID() {
+      console.log(uid)
+      this.uid = uid
+      return this.uid
+    },
+    waitUID() {
+      if (uid === null && this.onboardingPage < 3) {
+        setTimeout(this.waitUID, 100);
+        return
+      }
+      this.onboardingPage++
+        this.getUID()
+      store.commit('ADD_USER', {
+        user_name: this.name,
+        user_password: this.password,
+        user_id: this.uid,
+        logged_in: true
       })
+      store.commit('SET_CURRENTID', {
+        current_id: this.uid
+      })
+      var self = this
+      setTimeout(function() {
+        self.$router.push({
+          path: '/dashboard'
+        })
+      }, 2000);
     }
   }
 }
 </script>
+
+
 
 <style>
 .error {
@@ -117,7 +143,7 @@ export default {
   background: red !important;
 }
 
-.background {
+.lockscreen {
   margin: 0;
   padding: 0;
   left: 0;
@@ -130,7 +156,7 @@ export default {
   background-size: cover;
 }
 
-.background::after {
+.lockscreen::after {
   content: "";
   display: block;
   height: 100%;
@@ -156,7 +182,8 @@ export default {
 
 }
 
-.input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
   color: black;
 }
 
@@ -176,4 +203,20 @@ export default {
 }
 
 
+.button {
+  position: absolute;
+  right: -15%;
+  top: 0;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button .icon {
+  /* top: 50%;
+   transform: translateY(-50%); */
+  max-width: 100%;
+
+}
 </style>

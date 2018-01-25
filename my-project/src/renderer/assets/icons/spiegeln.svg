@@ -1,31 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="83px" height="60px" viewBox="0 0 83 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="57px" height="38px" viewBox="0 0 57 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
-    <title>Page 1</title>
+    <title>Group</title>
     <desc>Created with Sketch.</desc>
-    <defs>
-        <filter x="-19.0%" y="-14.7%" width="137.9%" height="137.9%" filterUnits="objectBoundingBox" id="filter-1">
-            <feOffset dx="0" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
-            <feGaussianBlur stdDeviation="6.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.258774909 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
-            <feMerge>
-                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
-                <feMergeNode in="SourceGraphic"></feMergeNode>
-            </feMerge>
-        </filter>
-    </defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-        <g id="Dashboard/Home" transform="translate(-223.000000, -125.000000)" stroke="#C8C8C8" stroke-width="1.25">
-            <g id="Group-3" transform="translate(73.000000, 90.000000)">
-                <g id="Spiegeln" filter="url(#filter-1)" transform="translate(134.000000, 2.000000)">
-                    <g id="Page-1" transform="translate(29.674419, 39.565891)">
-                        <path d="M28.124611,9.43535337 L28.124611,36.6930409" id="Stroke-1"></path>
-                        <polygon id="Stroke-2" points="0 9.43535337 0 34.5962957 21.8746974 22.0635176"></polygon>
-                        <polygon id="Stroke-3" points="55.2075697 9.43535337 55.2075697 34.5962957 33.3328723 22.0635176"></polygon>
-                        <path d="M11.4581748,7.33860817 C14.6145503,5.22534317 18.0513691,3.75030863 21.5995684,2.91485475 C29.6181465,1.02681193 38.2055614,2.40520424 45.4105481,7.06561516 C45.6827519,7.24165738 45.8326994,7.33860817 45.8326994,7.33860817" id="Stroke-4"></path>
-                        <polyline id="Stroke-5" points="47.9160039 0 47.9160039 8.38698077 39.5827858 8.38698077"></polyline>
-                    </g>
-                </g>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="spiegeln" stroke-width="1.25" stroke="#C8C8C8">
+            <g id="Group">
+                <path d="M28.79903,10.0012444 L28.79903,37.2589319" id="Stroke-1"></path>
+                <polygon id="Stroke-2" points="0.674419 10.0012444 0.674419 35.1621867 22.5491164 22.6294086"></polygon>
+                <polygon id="Stroke-3" points="55.8819887 10.0012444 55.8819887 35.1621867 34.0072913 22.6294086"></polygon>
+                <path d="M12.1325938,7.90449917 C15.2889693,5.79123417 18.7257881,4.31619963 22.2739874,3.48074575 C30.2925655,1.59270293 38.8799804,2.97109524 46.0849671,7.63150616 C46.3571709,7.80754838 46.5071184,7.90449917 46.5071184,7.90449917" id="Stroke-4"></path>
+                <polyline id="Stroke-5" points="48.5904229 0.565891 48.5904229 8.95287177 40.2572048 8.95287177"></polyline>
             </g>
         </g>
     </g>

@@ -4,9 +4,14 @@
 
 // export const Serialport = require('serialport')
 import Serialport from 'serialport'
-var port
+import store from './store'
 
-export var uid = '04 22 197 26 170 82 129'
+var port
+const Readline = Serialport.parsers.Readline
+const parser = new Readline()
+
+// export var uid = '0416515281'
+export var uid = null
 
 export var stillConnected = false
 
@@ -28,7 +33,7 @@ function findArduino (ports) {
   let result = ports.filter(function (obj) {
     return obj.productId === '7523'
   })
-  console.log(result)
+  // console.log(result)
   if (result.length !== 0) {
     openPort(result)
   }
@@ -39,16 +44,36 @@ function openPort (portObj) {
   console.log(portObj[0].comName)
   port = new Serialport(portObj[0].comName, () => {
     console.log('Port Opened')
-    port.on('data', (data) => {
+    port.pipe(parser)
+    parser.on('data', (data) => {
       /* get a buffer of data from the serial port */
       // return console.log(data.toString())
-      receiveMessage(port)
+      // receiveMessage(port)
+      console.log(data.search('Card UID:'))
+      if (data.search('Card UID:') >= 0) {
+        // console.log('TREFFER')
+        data = data.replace(/[^\d]/g, '')
+        uid = data
+        return store.commit('SET_CURRENTID', {
+          current_id: uid
+        })
+      } else {
+        return store.commit('SET_CURRENTID', {
+          current_id: 'nada'
+        })
+      }
     })
+
+    // port.on('data', (data) => {
+    //   /* get a buffer of data from the serial port */
+    //   // return console.log(data.toString())
+    //   receiveMessage(port)
+    // })
   })
 }
 
 function receiveMessage () {
-  port.on('data', (data) => {
+  parser.on('data', (data) => {
     /* get a buffer of data from the serial port */
     // console.log('yeassss')
     var str = data.toString()

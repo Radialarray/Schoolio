@@ -1,5 +1,6 @@
 // import Serialport from 'serialport'
 import {stillConnected, uid} from './serialReadRenderer'
+import _ from 'lodash'
 
 import Vue from 'vue'
 import axios from 'axios'
@@ -79,8 +80,11 @@ new Vue({
   //   }
   // }
   mounted: function () {
-    // console.log('route' + this.$route.path)
-    // console.log(this.$router)
+    // store.commit('SET_CURRENTID', {
+    //   current_id: this.uid
+    // })
   }
 }).$mount('#app')
-console.log(stillConnected)
+// setInterval(function () {
+//   console.log('Message: ' + uid)
+// }, 1000)

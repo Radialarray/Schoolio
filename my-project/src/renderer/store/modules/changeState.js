@@ -1,28 +1,25 @@
 const state = {
   users: [
     {
-      user_name: '',
-      user_password: '',
-      user_key: ''
+      user_name: 'aa',
+      user_password: 'aa',
+      user_id: '13990139535099013',
+      logged_in: false
     }
-  ]
+  ],
+  current_id: 'blaa'
 }
 
 const mutations = {
   ADD_USER (state, payload) {
     state.users.push(payload)
-  }
-}
-
-const actions = {
-  someAsyncTask ({ commit }) {
-    // do something async
-    // commit('INCREMENT_MAIN_COUNTER')
+  },
+  SET_CURRENTID (state, payload) {
+    state.current_id = payload.current_id
   }
 }
 
 export default {
   state,
-  mutations,
-  actions
+  mutations
 }

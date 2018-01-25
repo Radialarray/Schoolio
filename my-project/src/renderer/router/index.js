@@ -37,6 +37,18 @@ export default new Router({
       ]
     },
     {
+      path: '/help',
+      component: require('@/components/home').default,
+      name: '',
+      children: [
+        {
+          path: '',
+          name: 'Home',
+          component: require('@/components/help').default
+        }
+      ]
+    },
+    {
       path: '/landing-page',
       component: require('@/components/home').default,
       children: [
