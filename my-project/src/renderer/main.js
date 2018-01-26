@@ -1,4 +1,3 @@
-// import Serialport from 'serialport'
 import {stillConnected, uid} from './serialReadRenderer'
 import _ from 'lodash'
 
@@ -12,6 +11,7 @@ import VueNav from './components/navigation.vue'
 import VueHome from './components/home.vue'
 import VueDashboard from './components/dashboard.vue'
 import VueStatusbar from './components/statusbar.vue'
+import VueConnect from './components/connect.vue'
 import VeeValidate from 'vee-validate'
 
 import './assets/css/styles.min.css'
@@ -51,6 +51,7 @@ Vue.component('VueNav', VueNav)
 Vue.component('VueHome', VueHome)
 Vue.component('VueDashboard', VueDashboard)
 Vue.component('VueStatusbar', VueStatusbar)
+Vue.component('VueConnect', VueConnect)
 
 new Vue({
   template: '<App/>',
@@ -61,7 +62,8 @@ new Vue({
     VueNav,
     VueHome,
     VueDashboard,
-    VueStatusbar
+    VueStatusbar,
+    VueConnect
   },
   router,
   store,

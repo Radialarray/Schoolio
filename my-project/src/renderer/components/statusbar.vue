@@ -2,7 +2,7 @@
 
   <div class="uk-flex">
     <div>
-        <img class="uk-border-circle profile-pic uk-margin-right" src="../assets/img/fabian-moller-401639.jpg" />
+        <img class="uk-border-circle profile-pic uk-margin-right" src="../assets/img/lehrer.png" />
     </div>
     <div class="uk-width-expand@m uk-margin-bottom">
       <div class="uk-width-1-1 text-black uk-flex uk-margin-bottom">

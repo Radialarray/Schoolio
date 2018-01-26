@@ -37,25 +37,26 @@ export default new Router({
       ]
     },
     {
-      path: '/help',
+      path: '/home',
       component: require('@/components/home').default,
       name: '',
       children: [
         {
           path: '',
           name: 'Home',
-          component: require('@/components/help').default
+          component: require('@/components/dashboard').default
         }
       ]
     },
     {
-      path: '/landing-page',
+      path: '/help',
       component: require('@/components/home').default,
+      name: '',
       children: [
         {
           path: '',
-          name: 'landing-page',
-          component: require('@/components/LandingPage').default
+          name: 'Hilfe',
+          component: require('@/components/help').default
         }
       ]
     },
@@ -82,18 +83,6 @@ export default new Router({
       ]
     },
     {
-      path: '/circle',
-      name: 'circleTest',
-      component: require('@/components/pupils_sortable').default
-    }, {
-      path: '/nav',
-      name: 'nav',
-      component: require('@/components/navigation').default
-    }, {
-      path: '/screen2',
-      name: 'screen2',
-      component: require('@/components/screen2').default
-    }, {
       path: '*',
       redirect: '/'
     }, {

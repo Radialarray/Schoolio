@@ -1,14 +1,14 @@
 <template>
 <div class="uk-grid-collapse full-height" uk-grid>
   <transition name="fade">
-  <!-- <div v-if="lockscreen === true" class="lockscreen">
+  <div v-if="lockscreen === true" class="lockscreen">
     <img class="icon" src="../assets/icons/locked.svg">
     <p>
       Bitte lege den korrekten Tag auf das Lesegerät!
     </p>
-  </div> -->
+  </div>
   </transition>
-  <div class="uk-height-1-1 fg-z" style="width:30%">
+  <div class="uk-height-1-1" style="width:30%">
   </div>
   <div class="uk-background-muted uk-height-1-1 nav turquoise uk-position-fixed fg-z" style="width:30%">
     <vue-nav></vue-nav>
@@ -32,7 +32,7 @@ export default {
   name: 'home',
   data() {
     return {
-      lockscreen: true,
+      lockscreen: false,
       current_ID: store.state.changeState.current_id,
       logged_ID: store.state.changeState.current_id,
       locked: ''

@@ -13,7 +13,7 @@
             <input v-validate="'required'" class="uk-input input" name="name" type="text" placeholder="Name..." v-model="name">
             <div v-show="errors.any()">
               <div class="uk-alert alert" v-if="errors.has('name')">
-                Bitte tragen Sie einen Namen ein!
+                Bitte trage einen Namen ein!
               </div>
             </div>
             <input class="uk-input input" type="password" name="password" placeholder="Passwort..." v-validate="'required'" v-model="password">
@@ -35,8 +35,10 @@
         </transition>
 
         <transition name="custom-classes-transition" enter-active-class="fadeInRight" leave-active-class="fadeOutLeft">
-          <div v-if="onboardingPage === 2" class="uk-width-1-1">
-            <legend class="uk-legend">Legen Sie den Tag auf den Reader</legend>
+          <div v-if="onboardingPage === 2" class="uk-width-1-1 uk-flex uk-flex-between uk-flex-column uk-flex-middle uk-flex-center uk-width-1-1 uk-height-medium">
+            <legend class="uk-legend uk-text-center dosis">Lege den Tag auf den Reader</legend>
+
+            <vue-connect></vue-connect>
           </div>
         </transition>
 
@@ -48,7 +50,7 @@
 
 
       </div>
-      <button type="submit" class="uk-button uk-button-secondary uk-align-center" :disabled="errors.any()">Fertig</button>
+      <!-- <button type="submit" class="uk-button uk-button-secondary uk-align-center" :disabled="errors.any()">Fertig</button> -->
 
 
     </fieldset>
@@ -144,12 +146,13 @@ export default {
 }
 
 .lockscreen {
+  z-index: -10;
   margin: 0;
   padding: 0;
   left: 0;
   top: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100vw !important;
+  height: 100vh !important;
   position: fixed;
   background-image: url('../assets/img/eric-rothermel-23788sw.jpg');
   background-position: center;
@@ -157,10 +160,11 @@ export default {
 }
 
 .lockscreen::after {
+  z-index: -9;
   content: "";
   display: block;
   height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;

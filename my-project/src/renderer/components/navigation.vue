@@ -3,29 +3,29 @@
   <div>
 
     <div class="square-container uk-width-1-1">
-      <router-link to="home" class="circle-button">
+      <router-link v-bind:class="{ active: home }"  v-on:click="home= !home" to="home" class="circle-button">
         <div class="square-content">
           <img class="icon" src="../assets/icons/home.svg">
         </div>
       </router-link>
-      <router-link to="mirror" class="toggles circle-button">
+      <button v-bind:class="{ active: spiegeln }"  v-on:click="spiegeln= !spiegeln" class="toggles circle-button">
         <div class="square-content">
           <img class="icon" src="../assets/icons/spiegeln.svg">
         </div>
-      </router-link>
-      <router-link to="lock" class="toggles circle-button">
+      </button>
+      <button v-bind:class="{ active: sperren }"  v-on:click="sperren = !sperren" class="toggles circle-button">
         <div class="square-content">
           <img class="icon" src="../assets/icons/lock.svg">
         </div>
-      </router-link>
+      </button>
     </div>
 
-    <div class="uk-width-1-1 bottom-margin uk-flex uk-flex-center uk-flex-middle">
+    <div class="uk-width-1-1 bottom-margin top-margin uk-flex uk-flex-center uk-flex-middle">
       <div class="uk-border-circle status-circle"></div>
       <p>{{breadcrumb}}</p>
     </div>
 
-    <div class="square-container">
+    <div class="square-container uk-width-1-1">
       <router-link to="create-task" class="square">
         <div class="square-content">
           <p>
@@ -77,7 +77,10 @@ export default {
   components: {},
   data: function() {
     return {
-      breadcrumb: 'Home'
+      breadcrumb: 'Home',
+      spiegeln: false,
+      sperren: false,
+      home: false,
     }
   },
   methods: {
@@ -121,6 +124,10 @@ export default {
 
 .bottom-margin {
     margin-bottom: 2em;
+}
+
+.top-margin {
+    margin-top: 2em;
 }
 
 .main-menu-button {
@@ -194,7 +201,19 @@ export default {
     flex-direction: column;
 justify-content: center;
 
+@media (max-width: 1040px) {
+  p {
+    display: none;
+    }
 }
+@media (max-width: 1230px) {
+  p {
+    line-height: 10px !important;
+    }
+}
+}
+
+
 
 .circle-button {
     position: relative;
@@ -216,8 +235,21 @@ justify-content: center;
 
 .circle-button:hover::after {
     background: rgba(255,255,255,0.5) !important;
-    box-shadow: inset 0 5px 13px rgba(0, 0, 0, 0.25);
+    // box-shadow: inset 0 5px 13px rgba(0, 0, 0, 0.25);
 }
+
+.circle-button.active {
+  box-shadow: inset 0 5px 13px rgba(0, 0, 0, 0);
+  @include transition(all, 0.2s, ease-in-out)
+
+}
+
+.circle-button.active:after {
+  background: #FAB301 !important;
+  box-shadow: inset 0 5px 13px rgba(0, 0, 0, 0.25);
+
+}
+
 
 .toggles {
     position: relative;
@@ -241,7 +273,18 @@ justify-content: center;
 
 .toggles:hover::after {
     background: #FAB301 !important;
-    box-shadow: inset 0 5px 13px rgba(0, 0, 0, 0.25);
+    // box-shadow: 0 5px 13px rgba(0, 0, 0, 0);
+}
+.toggles.active {
+  box-shadow: inset 0 5px 13px rgba(0, 0, 0, 0);
+  @include transition(all, 0.2s, ease-in-out)
+
+}
+
+.toggles.active:after {
+  background: #FAB301 !important;
+  box-shadow: inset 0 5px 13px rgba(0, 0, 0, 0.25);
+
 }
 
 .icon {
