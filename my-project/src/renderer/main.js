@@ -1,5 +1,5 @@
-// import Serialport from 'serialport'
-import {stillConnected} from './serialReadRenderer'
+import {stillConnected, uid} from './serialReadRenderer'
+import _ from 'lodash'
 
 import Vue from 'vue'
 import axios from 'axios'
@@ -10,6 +10,8 @@ import VueDrag from './components/pupils_sortable.vue'
 import VueNav from './components/navigation.vue'
 import VueHome from './components/home.vue'
 import VueDashboard from './components/dashboard.vue'
+import VueStatusbar from './components/statusbar.vue'
+import VueConnect from './components/connect.vue'
 import VeeValidate from 'vee-validate'
 
 import './assets/css/styles.min.css'
@@ -48,16 +50,43 @@ Vue.component('VueDrag', VueDrag)
 Vue.component('VueNav', VueNav)
 Vue.component('VueHome', VueHome)
 Vue.component('VueDashboard', VueDashboard)
+Vue.component('VueStatusbar', VueStatusbar)
+Vue.component('VueConnect', VueConnect)
 
 new Vue({
   template: '<App/>',
   components: {
-    App
+    App,
+    VueCircle,
+    VueDrag,
+    VueNav,
+    VueHome,
+    VueDashboard,
+    VueStatusbar,
+    VueConnect
   },
   router,
   store,
+  VueCircle,
+  VueDrag,
+  VueNav,
+  VueHome,
+  VueDashboard,
+  VueStatusbar,
   data () {
     return {gaugeValue: 0}
+  },
+  // watch: {
+  //   '$route' (to, from) {
+  //     console.log('route' + this.$route.path)
+  //   }
+  // }
+  mounted: function () {
+    // store.commit('SET_CURRENTID', {
+    //   current_id: this.uid
+    // })
   }
 }).$mount('#app')
-console.log(stillConnected)
+// setInterval(function () {
+//   console.log('Message: ' + uid)
+// }, 1000)

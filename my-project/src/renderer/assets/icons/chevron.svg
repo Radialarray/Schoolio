@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="12px" viewBox="0 0 20 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Line</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Schüler-Home" transform="translate(-670.000000, -524.000000)" stroke-width="2" stroke="#000000">
+            <g id="Group" transform="translate(671.000000, 515.000000)">
+                <polyline id="Line" transform="translate(9.022049, 14.612732) scale(-1, -1) rotate(-180.000000) translate(-9.022049, -14.612732) " points="0 10.4068299 8.81863436 19.2254642 18.0440986 10"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

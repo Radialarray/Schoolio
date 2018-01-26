@@ -1,92 +1,32 @@
 <template>
-<div>
+<div class="content">
+  <vue-statusbar></vue-statusbar>
 
-    <div class="uk-grid-small uk-child-width-expand@s uk-text-center" uk-grid>
-      <div class="uk-width-auto@m">
-        <div class="uk-card uk-card-default uk-card-body">Auto</div>
-      </div>
-      <div class="uk-width-expand@m">
-        <div class="uk-card uk-card-default uk-card-body">
-          <span class="uk-label uk-align-left">Beginn</span>
-          <span class="uk-label uk-align-right">Ende</span>
+  <div class="uk-grid-small uk-child-width-expand@s uk-text-center" uk-grid>
 
-          <div class="rounded-corner">
-            <v-progress-linear v-model="valueDeterminate" :title="valueDeterminate +' Minuten sind vergangen'" uk-tooltip></v-progress-linear>
-
-          </div>
-        </div>
-      </div>
+    <div class="uk-width-expand uk-overflow-auto">
+      <transition>
+      <vue-drag></vue-drag>
+      </transition>
     </div>
 
-    <div class="uk-grid-small uk-child-width-expand@s uk-text-center" uk-grid>
-      <div class="uk-width-auto@m">
-        <div class="uk-card uk-card-default uk-card-body">Auto</div>
-      </div>
-
-      <div class="uk-width-1-2@m uk-overflow-auto">
-        <vue-drag></vue-drag>
-    </div>
-
-    <div class="uk-width-expand@m uk-height-1-1">
-      <div class="uk-child-width-1-2@s uk-flex-left uk-text-center" uk-grid>
-        <div>
-          <router-link to="create-task">
-          <div class="uk-card uk-card-default uk-card-body box">
-            <div class="box-content">
-              <p>Aufgabe erstellen</p>
-              <img class="uk-width-1-2" src="../assets/icons/noun_1409605_cc.svg">
-            </div>
-          </div>
-          </router-link>
-        </div>
-        <div>
-          <div class="uk-card uk-card-default uk-card-body box">
-            <div class="box-content">
-              <p>Aktuelle Aufgaben</p>
-              <img class="uk-width-1-2" src="../assets/icons/noun_317197_cc.svg">
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="uk-card uk-card-default uk-card-body box">
-            <div class="box-content">
-              <p>Klassen</p>
-              <img class="uk-width-1-2" src="../assets/icons/noun_353698_cc.svg">
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="uk-card uk-card-default uk-card-body box">
-            <div class="box-content">
-              <p>Aufgaben verteilen</p>
-              <img class="uk-width-1-2" src="../assets/icons/noun_830088_cc.svg">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="uk-width-auto@m">
-      <a class="uk-card uk-card-default uk-card-body uk-position-fixed uk-position-small uk-position-bottom-right" href="" >?</a>
-    </div>
-
-</div>
+  </div>
 
 
 
 </div>
 
-</div>
 </template>
 
 <script>
 export default {
   name: 'vue-dashboard',
-  data () {
+  data() {
     return {
       fill: {
         gradient: ['red', 'green', 'blue']
       },
-      valueDeterminate: parseInt(Math.random() * (100 / 60) * 100)
+      valueDeterminate: parseInt(Math.random() * (60/200) * 200)
     }
   },
   components: {},
@@ -95,3 +35,59 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+@import "../assets/css/styles.scss";
+
+.vue-progress-path path {
+    stroke-width: 12;
+}
+
+.vue-progress-path .progress {
+    stroke: red;
+}
+
+.vue-progress-path .background {
+    stroke: #edd;
+}
+
+.progress-linear {
+    height: 1.188rem !important;
+}
+
+.progress-linear__background {
+    background: $subaccent;
+}
+
+.progress-linear__bar__determinate {
+    background: $accent;
+}
+
+.color-accent {
+    background: $accent;
+}
+
+.progress-linear__background,
+.progress-linear__bar,
+.progress-linear__bar__determinate {
+    $round: 8px;
+    -webkit-border-radius: $round;
+    -moz-border-radius: $round;
+    border-radius: $round;
+}
+
+.text-black {
+    color: black;
+}
+
+
+.progress-linear__bar .description {
+  color: #9B9B9B;
+  font-size: 1rem;
+  line-height: 1rem;
+  text-align: right;
+  width: 95%;
+  position:absolute;
+
+}
+</style>

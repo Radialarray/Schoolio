@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="57px" height="38px" viewBox="0 0 57 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="spiegeln" stroke-width="1.25" stroke="#C8C8C8">
+            <g id="Group">
+                <path d="M28.79903,10.0012444 L28.79903,37.2589319" id="Stroke-1"></path>
+                <polygon id="Stroke-2" points="0.674419 10.0012444 0.674419 35.1621867 22.5491164 22.6294086"></polygon>
+                <polygon id="Stroke-3" points="55.8819887 10.0012444 55.8819887 35.1621867 34.0072913 22.6294086"></polygon>
+                <path d="M12.1325938,7.90449917 C15.2889693,5.79123417 18.7257881,4.31619963 22.2739874,3.48074575 C30.2925655,1.59270293 38.8799804,2.97109524 46.0849671,7.63150616 C46.3571709,7.80754838 46.5071184,7.90449917 46.5071184,7.90449917" id="Stroke-4"></path>
+                <polyline id="Stroke-5" points="48.5904229 0.565891 48.5904229 8.95287177 40.2572048 8.95287177"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

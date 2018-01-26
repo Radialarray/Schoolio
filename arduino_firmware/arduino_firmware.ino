@@ -1,32 +1,3 @@
-/**
- * --------------------------------------------------------------------------------------------------------------------
- * Example sketch/program showing how to read data from more than one PICC to serial.
- * --------------------------------------------------------------------------------------------------------------------
- * This is a MFRC522 library example; for further details and other examples see: https://github.com/miguelbalboa/rfid
- *
- * Example sketch/program showing how to read data from more than one PICC (that is: a RFID Tag or Card) using a
- * MFRC522 based RFID Reader on the Arduino SPI interface.
- *
- * Warning: This may not work! Multiple devices at one SPI are difficult and cause many trouble!! Engineering skill
- *          and knowledge are required!
- *
- * @license Released into the public domain.
- *
- * Typical pin layout used:
- * -----------------------------------------------------------------------------------------
- *             MFRC522      Arduino       Arduino   Arduino    Arduino          Arduino
- *             Reader/PCD   Uno/101       Mega      Nano v3    Leonardo/Micro   Pro Micro
- * Signal      Pin          Pin           Pin       Pin        Pin              Pin
- * -----------------------------------------------------------------------------------------
- * RST/Reset   RST          9             5         D9         RESET/ICSP-5     RST
- * SPI SS 1    SDA(SS)      ** custom, take a unused pin, only HIGH/LOW required **
- * SPI SS 2    SDA(SS)      ** custom, take a unused pin, only HIGH/LOW required **
- * SPI MOSI    MOSI         11 / ICSP-4   51        D11        ICSP-4           16
- * SPI MISO    MISO         12 / ICSP-1   50        D12        ICSP-1           14
- * SPI SCK     SCK          13 / ICSP-3   52        D13        ICSP-3           15
- *
- */
-
 #include <SPI.h>
 #include <MFRC522.h>
 
@@ -38,16 +9,16 @@
 
 byte ssPins[] = {SS_1_PIN, SS_2_PIN};
 
-MFRC522 mfrc522[NR_OF_READERS];   // Create MFRC522 instance.
+MFRC522 mfrc522;   // Create MFRC522 instance.
 
 int lastValues[4];
 int counter = 0;
 int isPresent = 0;
 int tagOnReader = 0;
-
+int lastUID;
 /**
- * Initialize.
- */
+   Initialize.
+*/
 void setup() {
 
   Serial.begin(9600); // Initialize serial communications with the PC
@@ -56,75 +27,48 @@ void setup() {
   SPI.begin();        // Init SPI bus
 
   for (uint8_t reader = 0; reader < NR_OF_READERS; reader++) {
-    mfrc522[reader].PCD_Init(ssPins[reader], RST_PIN); // Init each MFRC522 card
+    mfrc522.PCD_Init(ssPins[reader], RST_PIN); // Init each MFRC522 card
     Serial.print(F("Reader "));
     Serial.print(reader);
     Serial.print(F(": "));
-    mfrc522[reader].PCD_DumpVersionToSerial();
+    mfrc522.PCD_DumpVersionToSerial();
   }
 }
 
-/**
- * Main loop.
- */
+
 void loop() {
-
-//  for (uint8_t reader = 0; reader < NR_OF_READERS; reader++) {
-    // Look for new cards
-//    Serial.println(mfrc522[0].PICC_IsNewCardPresent());
-    isPresent = mfrc522[0].PICC_IsNewCardPresent();
-//    Serial.print("isPresent: ");
-//    Serial.println(isPresent);
-//
-    tagOnReader = mfrc522[0].PICC_ReadCardSerial();
-//    Serial.print("tagOnReader: ");
-//    Serial.println(tagOnReader);
-//lastValues[counter] = tagOnReader;
-//counter++;
-//if(counter >3) {
-//  counter = 0;
-//}
-//    int compareVal = 0;
-//  for (int i=0; i<=3;i++){
-//    compareVal = compareVal+ lastValues[i];
-//// Serial.print(lastValues[i]);
-//// Serial.println();
-//  }
-//  if(compareVal > 0) {
-//    } else {
-//      Serial.println("NOTHING");
-//    }
-
-    if (isPresent && tagOnReader) {
-//      Serial.print(F("Reader "));
-//      Serial.print(reader);
-      // Show some details of the PICC (that is: the tag/card)
-      Serial.print(F("Card UID:"));
-      dump_byte_array(mfrc522[0].uid.uidByte, mfrc522[0].uid.size);
-//      Serial.print(F("PICC type: "));
-//      MFRC522::PICC_Type piccType = mfrc522[reader].PICC_GetType(mfrc522[reader].uid.sak);
-//      Serial.println(mfrc522[reader].PICC_GetTypeName(piccType));
-
-      // Halt PICC
-//      mfrc522[reader].PICC_HaltA();
-      // Stop encryption on PCD
-//      mfrc522[reader].PCD_StopCrypto1();
-    } //if (mfrc522[reader].PICC_IsNewC
-
-  } //for(uint8_t reader
+  // Look for new cards
+  if ( ! mfrc522.PICC_IsNewCardPresent()) {
+    Serial.println("No card");
+    delay(2000);
+    return;
+  }
 
 
-//}
+//check if serial has been read!!! Important, else jumps over to 'no card'
+  if ( ! mfrc522.PICC_ReadCardSerial()) {
+    return;
+  }
+
+  //  Serial.println("Present");
+  Serial.print(F("Card UID:"));
+  mfrc522.PICC_ReadCardSerial();
+
+  dump_byte_array(mfrc522.uid.uidByte, mfrc522.uid.size);
+
+  delay(2000);
+
+  mfrc522.PICC_HaltA();
+
+}
 
 /**
- * Helper routine to dump a byte array as hex values to Serial.
- */
+   Helper routine to dump a byte array as hex values to Serial.
+*/
 void dump_byte_array(byte *buffer, byte bufferSize) {
   for (byte i = 0; i < bufferSize; i++) {
     Serial.print(buffer[i] < 0x10 ? " 0" : " ");
-//    Serial.print(buffer[i], HEX);
-    Serial.print(buffer[i]);
+    Serial.print(buffer[i], HEX);
   }
-        Serial.println();
-  delay(5000);
+  Serial.println();
 }

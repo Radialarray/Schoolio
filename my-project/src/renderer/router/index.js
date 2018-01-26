@@ -5,17 +5,58 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    // {
+    //   path: '/',
+    //   component: require('@/components/welcome').default,
+    //   name: '',
+    //   children: [
+    //     {
+    //       path: '',
+    //       name: 'Home',
+    //       component: require('@/components/home').default,
+    //       children: [
+    //         {
+    //           path: '',
+    //           name: 'Dashboard',
+    //           component: require('@/components/LandingPage').default
+    //         }
+    //       ]
+    //     }
+    //   ]
+    // },
     {
       path: '/',
-      component: require('@/components/welcome').default
-    }, {
-      path: '/landing-page',
-      component: require('@/components/home').default,
+      component: require('@/components/welcome').default,
+      name: '',
       children: [
         {
           path: '',
-          name: 'landing-page',
-          component: require('@/components/LandingPage').default
+          name: 'Home',
+          component: require('@/components/home').default
+        }
+      ]
+    },
+    {
+      path: '/home',
+      component: require('@/components/home').default,
+      name: '',
+      children: [
+        {
+          path: '',
+          name: 'Home',
+          component: require('@/components/dashboard').default
+        }
+      ]
+    },
+    {
+      path: '/help',
+      component: require('@/components/home').default,
+      name: '',
+      children: [
+        {
+          path: '',
+          name: 'Hilfe',
+          component: require('@/components/help').default
         }
       ]
     },
@@ -36,24 +77,12 @@ export default new Router({
       children: [
         {
           path: '',
-          name: 'landing-page',
+          name: 'Aufgabe erstellen',
           component: require('@/components/createTask').default
         }
       ]
     },
     {
-      path: '/circle',
-      name: 'circleTest',
-      component: require('@/components/pupils_sortable').default
-    }, {
-      path: '/nav',
-      name: 'nav',
-      component: require('@/components/navigation').default
-    }, {
-      path: '/screen2',
-      name: 'screen2',
-      component: require('@/components/screen2').default
-    }, {
       path: '*',
       redirect: '/'
     }, {

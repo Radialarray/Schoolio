@@ -1,6 +1,7 @@
 'use strict'
+import { app, BrowserWindow, Menu, Tray } from 'electron'
+const path = require('path')
 
-import { app, BrowserWindow } from 'electron'
 /**
  * Set `__static` path to static files in production
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
@@ -23,6 +24,8 @@ function createWindow () {
     useContentSize: true,
     width: 1000
   })
+
+  // mainWindow.webContents.openDevTools()
 
   mainWindow.loadURL(winURL)
 
