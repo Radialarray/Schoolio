@@ -26,7 +26,7 @@
     </div>
 
     <div class="square-container uk-width-1-1">
-      <router-link to="create-task" class="square">
+      <router-link to="" class="square">
         <div class="square-content">
           <p>
             Aufgaben erstellen
@@ -34,14 +34,14 @@
           <img class="icon" src="../assets/icons/plus.svg">
         </div>
       </router-link>
-      <div class="square">
+      <router-link to="aufgaben" class="square">
         <div class="square-content">
           <p>
             Aktuelle Aufgaben
           </p>
           <img class="icon" src="../assets/icons/aufgabenliste.svg">
         </div>
-      </div>
+      </router-link>
       <div class="square">
         <div class="square-content">
           <p>
@@ -50,19 +50,19 @@
           <img class="icon" src="../assets/icons/klassen.svg">
         </div>
       </div>
-      <div class="square">
+      <router-link to="task-verteilen" class="square">
         <div class="square-content">
           <p>
             Aufgaben verteilen
           </p>
           <img class="icon" src="../assets/icons/verteilen.svg">
         </div>
-      </div>
+      </router-link>
     </div>
   </div>
   <div class="uk-width-1-1 uk-flex uk-flex-middle uk-flex-between uk-margin-remove">
     <p class="uk-margin-remove logo">
-      School by School<span class="bold">Systems</span>
+      School<span class="bold">io</span> by School<span class="bold">Systems</span>
     </p>
     <div class="uk-margin-remove">
       <router-link to="help" class="uk-align-right uk-margin-remove circle help-circle">?</router-link>

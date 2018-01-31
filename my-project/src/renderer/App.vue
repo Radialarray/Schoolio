@@ -8,7 +8,7 @@
 
 <script>
   export default {
-    name: 'eduproto'
+    name: 'Schoolio'
   }
 </script>
 

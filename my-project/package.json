@@ -1,6 +1,6 @@
 {
-  "name": "eduproto",
-  "version": "0.0.0",
+  "name": "Schoolio",
+  "version": "1.0.0",
   "author": "sarah wach & sven loechner",
   "description": "classroom management software for teachers and students",
   "license": "UNLICENSED",
@@ -22,8 +22,8 @@
     "rebuild": "electron-rebuild -f -w yourmodule"
   },
   "build": {
-    "productName": "eduproto",
-    "appId": "org.simulatedgreg.electron-vue",
+    "productName": "Schoolio",
+    "appId": "by SchoolSystems",
     "directories": {
       "output": "build"
     },

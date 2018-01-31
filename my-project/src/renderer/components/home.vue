@@ -2,21 +2,21 @@
 <div class="uk-grid-collapse full-height" uk-grid>
   <transition name="fade">
   <div v-if="lockscreen === true" class="lockscreen">
+    <p class="header">{{message}}</p>
     <img class="icon" src="../assets/icons/locked.svg">
-    <p>
-      Bitte lege den korrekten Tag auf das Lesegerät!
-    </p>
+    <div>
+      <!-- Bitte lege den korrekten Tag auf das Lesegerät! Logged ID: {{logged_ID}}; Current ID: {{current_ID}} -->
+      <p>{{submessage}}</p>
+    </div>
   </div>
-  </transition>
+</transition>
   <div class="uk-height-1-1" style="width:30%">
   </div>
   <div class="uk-background-muted uk-height-1-1 nav turquoise uk-position-fixed fg-z" style="width:30%">
     <vue-nav></vue-nav>
   </div>
   <div class="uk-padding uk-height-1-1 uk-width-expand bg-z">
-    <transition name="custom-classes-transition" enter-active-class="slideInRight" leave-active-class="slideOutLeft">
       <router-view></router-view>
-    </transition>
   </div>
 </div>
 </template>
@@ -35,6 +35,8 @@ export default {
       lockscreen: false,
       current_ID: store.state.changeState.current_id,
       logged_ID: store.state.changeState.current_id,
+      message: '',
+      submessage: '',
       locked: ''
     }
   },
@@ -48,8 +50,15 @@ export default {
       let obj = _.find(store.state.changeState.users, {
         'logged_in': true
       })
-      this.name = obj.user_name + 'changed'
+      this.logged_ID = obj.user_name + 'changed'
       if (store.state.changeState.current_id.localeCompare(obj.user_id) !== 0 ) {
+        if(store.state.changeState.current_id.localeCompare('nada') === 0) {
+          this.message = 'Der Tag wurde entfernt.'
+          this.submessage = ''
+        } else if(store.state.changeState.current_id.localeCompare('nada') !== 0) {
+          this.message = 'Fehler'
+          this.submessage = 'Lege den Tag des angemeldeten Nutzers auf.'
+        }
         this.lockscreen = true
         this.locked = 'Ungleich!'
       } else {
@@ -132,12 +141,23 @@ export default {
   height: 200px;
 }
 
-.lockscreen p {
+.lockscreen div {
   z-index: 1000001;
   position: absolute;
-  top: 70%;
+  bottom: 20%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%);
+}
+
+.lockscreen .header {
+  z-index: 1000001;
+  position: absolute;
+  font-family: dosis;
+  font-weight: bold;
+  font-size: 2rem;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .lockscreen::after {

@@ -1,4 +1,4 @@
-# EduProto
+# Schoolio
 
 > classroom management software prototype, based on vuejs and electron
 

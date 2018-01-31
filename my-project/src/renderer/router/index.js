@@ -83,6 +83,28 @@ export default new Router({
       ]
     },
     {
+      path: '/task-verteilen',
+      component: require('@/components/home').default,
+      children: [
+        {
+          path: '',
+          name: 'Aufgaben verteilen',
+          component: require('@/components/createTask').default
+        }
+      ]
+    },
+    {
+      path: '/aufgaben',
+      component: require('@/components/home').default,
+      children: [
+        {
+          path: '',
+          name: 'Aufgabe ansehen',
+          component: require('@/components/aktuelleaufgaben').default
+        }
+      ]
+    },
+    {
       path: '*',
       redirect: '/'
     }, {

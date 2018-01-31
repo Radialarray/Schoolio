@@ -1,4 +1,4 @@
-# eduproto
+# Schoolio
 
 > classroom management software for teachers and students
 
